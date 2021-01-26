@@ -2,6 +2,8 @@ package ru.pa4ok.app;
 
 import ru.pa4ok.test.Student;
 
+import java.util.Arrays;
+
 public class Main
 {
     /*
@@ -14,12 +16,27 @@ public class Main
     - int age
     - String subject
     - int exp
+    - String[] groups //длина либо, получаете длину в конструкторе и инициализируете с ней
+
+    - public boolean hasGroup(String group)
+        проверка есть ли группа в массииве
+    - public void addGroup(String group)
+        добавление группы в массив если ее там нет
+    - public void removeGroup(String group)
+        уставновка null вместо группы, если она существует
 
     создать объект класса и вывести в консоль
      */
 
     public static void main(String[] args)
     {
+        /*String s1 = "13221223232";
+        String s2 = "13221223232";
+
+        if(s1.equals(s2)) { //если s1 будет null - вы словите NullPointerException
+
+        }*/
+
         /*int i = 12412432;
         boolean b = true;
         float f = 444.44545F;
@@ -58,10 +75,10 @@ public class Main
         /*int[] arr = new int[10];
         System.out.println(Arrays.toString(arr));
 
-        *//*Integer[] arr1 = new Integer[10];
-        System.out.println(Arrays.toString(arr1));*//*
+        Integer[] arr1 = new Integer[10];
+        System.out.println(Arrays.toString(arr1));*/
 
-        for(int i=0; i<arr.length; i++)
+        /*for(int i=0; i<arr.length; i++)
         {
             arr[i] = i;
         }
@@ -70,18 +87,27 @@ public class Main
         {
             System.out.printf(i + " | ");
         }
-        System.out.println();
+        System.out.println();*/
 
         //Integer integer = 4;
         //String s11 = String.valueOf(4);
 
-        arr = new int[30];
+        /*arr = new int[30];
         System.out.println(Arrays.toString(arr));*/
 
         /*Book book = new Book("math");
         System.out.println(book);*/
 
-        Student s1 = new Student("Vasya", 20, 2);
-        System.out.println(s1);
+        Student student = new Student("Vasya", 15, 5);
+        System.out.println(student);
+
+        /*student.setMark(0, 4);
+        student.setMark(5, 5);
+        System.out.println(student);
+        */
+
+        student.setMark(0, 4);
+        System.out.println(student.getMark(0));
+        System.out.println(student.getMark(-1));
     }
 }
