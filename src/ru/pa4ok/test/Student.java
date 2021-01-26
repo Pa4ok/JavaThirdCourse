@@ -2,26 +2,24 @@ package ru.pa4ok.test;
 
 import java.util.Arrays;
 
-public class Student
-{
+public class Student {
     private String name;
     private int age;
     private int level;
     private int[] marks;
 
-    public Student(String name, int age, int level) {
+    public Student(String name, int age, int level, int marksLength) {
         this.name = name;
         this.age = age;
         this.level = level;
-        this.marks = new int[4];
+        this.marks = new int[marksLength];
     }
 
-    public Student(String name, int age) {
-        this(name, age, 1);
+    public Student(String name, int age, int marksLength) {
+        this(name, age, 1, marksLength);
     }
 
-    public void setMark(int level, int mark)
-    {
+    public void setMark(int level, int mark) {
         /*if(level < 0 || level >= marks.length) {
             System.out.println("Неверный курс студента!");
             return;
@@ -32,25 +30,20 @@ public class Student
             return;
         }*/
 
-        if(level >= 0 && level < marks.length && mark >=2 && mark <= 5)
-        {
+        if (level >= 0 && level < marks.length && mark >= 2 && mark <= 5) {
             //this.marks[level] = mark;
             marks[level] = mark;
-        }
-        else
-        {
+        } else {
             System.out.println("Неверный курс или оценка");
         }
     }
 
 
-    public int getMark(int level)
-    {
-        if(level < 0 || level >= marks.length) {
+    public int getMark(int level) {
+        if (level < 0 || level >= marks.length) {
             System.out.println("Такой оценки не существует");
             return 0;
         }
-
         return marks[level];
     }
 
@@ -89,7 +82,6 @@ public class Student
     }
 }
 
-class TestInClass
-{
+class TestInClass {
     public int test;
 }
