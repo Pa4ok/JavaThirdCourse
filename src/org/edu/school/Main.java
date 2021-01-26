@@ -43,27 +43,35 @@ public class Main
 
     public static void main(String[] args)
     {
-        /*HumanInfo info1 = new HumanInfo("Vasiliy", "Petrov", false, 50);
-        Teacher teacher1 = new Teacher(info1, "pp", 30);*/
-
-        Teacher teacher1 = new Teacher(
+        Teacher teacher = new Teacher(
                 new HumanInfo(
                         "Vasiliy",
-                        "Petrov",
-                        "Grigorevi4",
+                        "Grigorevich",
                         false,
                         50
                 ),
-                new Subject(
-                        "predprofilnaya podgotovka",
-                        1,
-                        3,
-                        false
-                ),
+                "pp",
                 30
         );
 
-        System.out.println(teacher1);
-        System.out.println(teacher1.getTeacherInfo());
+        Student student = new Student(
+                new HumanInfo(
+                        "sergey",
+                        "kovalenko",
+                        false,
+                        20
+                ),
+                7
+        );
+
+        School school = new School(
+                23,
+                "ГБУ им.Путина",
+                teacher,
+                student
+        );
+
+        System.out.println(school + "\n");
+        school.work();
     }
 }
