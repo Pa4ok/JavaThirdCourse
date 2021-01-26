@@ -18,6 +18,9 @@ public class Main
         выводит фио целиком
     - public String getShortNames()
         выводит фио сокращенно
+    - public void nextYear()
+        метод который увеличивает год на 1
+
 
     Teacher
     - HumanInfo humanInfo
@@ -25,18 +28,25 @@ public class Main
     - int exp (стаж)
     - public String getTeacherInfo()
         метод должен вернуть фио преподавателя и названиие предмета который он ведет
+    - public void nextYear()
+        вызывать humanInfo.nextYear()
+        увеличивать на 1 стаж exp++
 
     Student
     - HumanInfo humanInfo
     - int level
+    - public void nextYear()
+        вызывать humanInfo.nextYear()
+        увеличивать на 1 курс level++
 
     School
     - int index
     - String title
-    - Teacher teacher
-    - Student student
-    - public void work()
-        вывести краткое имя преподавателя + учит + краткое имя студента + на предмете + предмет
+    - Teacher[] teachers //3
+    - Student[] students //3
+    - public void nextYearAll()
+        перебирать всех студентов и преподавателей
+        и вызывать у них метод nextYear()
 
     создать объект класса и протестировать функции
      */
