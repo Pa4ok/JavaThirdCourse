@@ -4,16 +4,14 @@ import java.util.Arrays;
 
 public class Teacher
 {
-    private String name;
-    private int age;
+    private HumanInfo humanInfo;
     private String subject;
     private int exp;
     private String[] warnings = new String[3];
 
-    public Teacher(String name, int age, String subject, int exp)
+    public Teacher(HumanInfo humanInfo, String subject, int exp)
     {
-        this.name = name;
-        this.age = age;
+        this.humanInfo = humanInfo;
         this.subject = subject;
         this.exp = exp;
     }
@@ -57,28 +55,19 @@ public class Teacher
     @Override
     public String toString() {
         return "Teacher{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
+                "humanInfo=" + humanInfo +
                 ", subject='" + subject + '\'' +
                 ", exp=" + exp +
                 ", warnings=" + Arrays.toString(warnings) +
                 '}';
     }
 
-    public String getName() {
-        return name;
+    public HumanInfo getHumanInfo() {
+        return humanInfo;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
+    public void setHumanInfo(HumanInfo humanInfo) {
+        this.humanInfo = humanInfo;
     }
 
     public String getSubject() {

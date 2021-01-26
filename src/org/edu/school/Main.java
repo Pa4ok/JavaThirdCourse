@@ -8,44 +8,48 @@ public class Main
     все поля приватные + геттеры и сеттеры
     переопределить вывод
 
-    Teacher
-    - String name
+    HumanInfo
+    - String firstname
+    - String surname
+    - String patronymic
+    - boolean isWoman
     - int age
-    - String subject
+
+    Subject
+    - String title
+    - int startLevel //семестр когда предмет начинается
+    - int duration //длительность в семестрах
+    - boolean exam //есть ли экзамен
+
+    Teacher
+    - HumanInfo humanInfo
+    - Subject subject
     - int exp (стаж)
-    - String[] warnings //длина 3
 
-    - public void addWarn(String warn)
-         если в массиве warnings есть null элемент заменяет его на warn
-         если нет, то вывод в консоль "бан + информация по преподавателю"
-
-    - public boolean hasWarn(String warn)
-        проверяет есть ли такая жалоба на преподавателя
-        !строки стравниваются через equals
-        !вы не сможете вызвать метод equals из null объекта
-
-    - public void delWarn(String warn)
-        если в массиве есть такая жалоба - заменить ее на null
-
+    - public String getTeacherInfo()
+        метод должен вернуть фио преподавателя и названиие предмета который он ведет
 
     создать объект класса и протестировать функции
      */
 
     public static void main(String[] args)
     {
-        Teacher teacher = new Teacher("Oshurok", 30, "pp", 10);
-        System.out.println(teacher);
-        
-        teacher.addWarn("one");
-        teacher.addWarn("two");
-        System.out.println(teacher.hasWarn("three"));
-        if(teacher.hasWarn("one")) {
-            teacher.delWarn("one");
-        }
-        teacher.addWarn("4");
-        teacher.addWarn("5");
-        teacher.addWarn("6");
+        /*HumanInfo info1 = new HumanInfo("Vasiliy", "Petrov", false, 50);
+        Teacher teacher1 = new Teacher(info1, "pp", 30);*/
 
-        System.out.println(teacher);
+        Teacher teacher1 = new Teacher(
+                new HumanInfo(
+                        "Vasiliy",
+                        "Petrov",
+                        "Grigorevi4",
+                        false,
+                        50
+                ),
+                "pp",
+                30
+        );
+
+        System.out.println(teacher1);
+        System.out.println(teacher1.getHumanInfo().getFullNames());
     }
 }
