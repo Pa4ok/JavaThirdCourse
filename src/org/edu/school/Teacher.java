@@ -5,11 +5,11 @@ import java.util.Arrays;
 public class Teacher
 {
     private HumanInfo humanInfo;
-    private String subject;
+    private Subject subject;
     private int exp;
     private String[] warnings = new String[3];
 
-    public Teacher(HumanInfo humanInfo, String subject, int exp)
+    public Teacher(HumanInfo humanInfo, Subject subject, int exp)
     {
         this.humanInfo = humanInfo;
         this.subject = subject;
@@ -52,6 +52,22 @@ public class Teacher
         }
     }
 
+    public boolean hasBanned()
+    {
+        for(String s : warnings)
+        {
+            if(s == null) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public String getTeacherInfo()
+    {
+        return humanInfo.getShortNames() + " ban:" + hasBanned() + " subject:" + subject.getTitle();
+    }
+
     @Override
     public String toString() {
         return "Teacher{" +
@@ -70,11 +86,11 @@ public class Teacher
         this.humanInfo = humanInfo;
     }
 
-    public String getSubject() {
+    public Subject getSubject() {
         return subject;
     }
 
-    public void setSubject(String subject) {
+    public void setSubject(Subject subject) {
         this.subject = subject;
     }
 

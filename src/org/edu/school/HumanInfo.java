@@ -33,6 +33,11 @@ public class HumanInfo
         return surname + " " + firstname + (patronymic == null ? "" : (" " + patronymic));
     }
 
+    public String getShortNames()
+    {
+        return surname + " " + firstname.charAt(0) + "." + (patronymic == null ? "" : (patronymic.charAt(0) + "."));
+    }
+
     @Override
     public String toString() {
         return "HumanInfo{" +

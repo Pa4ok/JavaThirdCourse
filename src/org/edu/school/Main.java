@@ -45,11 +45,16 @@ public class Main
                         false,
                         50
                 ),
-                "pp",
+                new Subject(
+                        "predprofilnaya podgotovka",
+                        1,
+                        3,
+                        false
+                ),
                 30
         );
 
         System.out.println(teacher1);
-        System.out.println(teacher1.getHumanInfo().getFullNames());
+        System.out.println(teacher1.getTeacherInfo());
     }
 }
