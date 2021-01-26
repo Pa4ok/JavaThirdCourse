@@ -14,20 +14,29 @@ public class Main
     - String patronymic
     - boolean isWoman
     - int age
-
-    Subject
-    - String title
-    - int startLevel //семестр когда предмет начинается
-    - int duration //длительность в семестрах
-    - boolean exam //есть ли экзамен
+    - public String getFullNames()
+        выводит фио целиком
+    - public String getShortNames()
+        выводит фио сокращенно
 
     Teacher
     - HumanInfo humanInfo
-    - Subject subject
+    - String subject
     - int exp (стаж)
-
     - public String getTeacherInfo()
         метод должен вернуть фио преподавателя и названиие предмета который он ведет
+
+    Student
+    - HumanInfo humanInfo
+    - int level
+
+    School
+    - int index
+    - String title
+    - Teacher teacher
+    - Student student
+    - public void work()
+        вывести краткое имя преподавателя + учит + краткое имя студента + на предмете + предмет
 
     создать объект класса и протестировать функции
      */
