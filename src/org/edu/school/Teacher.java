@@ -15,6 +15,12 @@ public class Teacher
         this.exp = exp;
     }
 
+    public void nextYear()
+    {
+        humanInfo.nextYear();
+        exp++;
+    }
+
     @Override
     public String toString() {
         return "Teacher{" +

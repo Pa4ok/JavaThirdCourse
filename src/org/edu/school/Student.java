@@ -10,6 +10,12 @@ public class Student
         this.level = level;
     }
 
+    public void nextYear()
+    {
+        humanInfo.nextYear();
+        level++;
+    }
+
     @Override
     public String toString() {
         return "Student{" +

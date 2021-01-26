@@ -20,6 +20,11 @@ public class HumanInfo
         this(firstname, surname, null, isWoman, age);
     }
 
+    public void nextYear()
+    {
+        age++;
+    }
+
     public String getFullNames()
     {
         /*String s = surname + " " + firstname;

@@ -53,7 +53,7 @@ public class Main
 
     public static void main(String[] args)
     {
-        Teacher teacher = new Teacher(
+        Teacher t1 = new Teacher(
                 new HumanInfo(
                         "Vasiliy",
                         "Grigorevich",
@@ -64,7 +64,18 @@ public class Main
                 30
         );
 
-        Student student = new Student(
+        Teacher t2 = new Teacher(
+                new HumanInfo(
+                        "Vyacheslav",
+                        "Astapovi4",
+                        false,
+                        30
+                ),
+                "math",
+                9
+        );
+
+        Student s1 = new Student(
                 new HumanInfo(
                         "sergey",
                         "kovalenko",
@@ -74,14 +85,25 @@ public class Main
                 7
         );
 
-        School school = new School(
-                23,
-                "ГБУ им.Путина",
-                teacher,
-                student
+        Student s2 = new Student(
+                new HumanInfo(
+                        "nikita",
+                        "efkepfewfefef",
+                        false,
+                        23
+                ),
+                5
         );
 
+        School school = new School(23, "ГБУ им.Путина");
+        System.out.println(school);
+        school.getTeachers()[0] = t1;
+        school.getTeachers()[1] = t2;
+        school.getStudents()[0] = s1;
+        school.getStudents()[1] = s2;
         System.out.println(school + "\n");
-        school.work();
+
+        school.nextYearAll();
+        System.out.println(school);
     }
 }

@@ -1,26 +1,35 @@
 package org.edu.school;
 
+import java.util.Arrays;
+
 public class School
 {
     private int index;
     private String title;
-    private Teacher teacher;
-    private Student student;
+    private Teacher[] teachers;// = new Teacher[2];
+    private Student[] students;// = new Student[2];
 
-    public School(int index, String title, Teacher teacher, Student student) {
+
+    public School(int index, String title, Teacher[] teachers, Student[] students) {
         this.index = index;
         this.title = title;
-        this.teacher = teacher;
-        this.student = student;
+        this.teachers = teachers;
+        this.students = students;
     }
 
-    public void work()
+    public School(int index, String title) {
+        this(index, title, new Teacher[2], new Student[2]);
+    }
+
+    public void nextYearAll()
     {
-        System.out.println(
-                teacher.getHumanInfo().getShortNames()
-                        + " учит " + student.getHumanInfo().getShortNames()
-                        + " на предмете " + teacher.getSubject()
-        );
+        for(Teacher t : teachers) {
+            t.nextYear();
+        }
+
+        for(Student s : students) {
+            s.nextYear();
+        }
     }
 
     @Override
@@ -28,8 +37,8 @@ public class School
         return "School{" +
                 "index=" + index +
                 ", title='" + title + '\'' +
-                ", teacher=" + teacher +
-                ", student=" + student +
+                ", teachers=" + Arrays.toString(teachers) +
+                ", students=" + Arrays.toString(students) +
                 '}';
     }
 
@@ -49,19 +58,19 @@ public class School
         this.title = title;
     }
 
-    public Teacher getTeacher() {
-        return teacher;
+    public Teacher[] getTeachers() {
+        return teachers;
     }
 
-    public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
+    public void setTeachers(Teacher[] teachers) {
+        this.teachers = teachers;
     }
 
-    public Student getStudent() {
-        return student;
+    public Student[] getStudents() {
+        return students;
     }
 
-    public void setStudent(Student student) {
-        this.student = student;
+    public void setStudents(Student[] students) {
+        this.students = students;
     }
 }
