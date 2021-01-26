@@ -1,20 +1,23 @@
 package ru.pa4ok.test;
 
+import java.util.Arrays;
+
 public class Student
 {
     private String name;
     private int age;
     private int level;
+    private int[] marks;
 
-    public Student(String name, int age, int level) {
+    public Student(String name, int age, int level, int marksCount) {
         this.name = name;
         this.age = age;
         this.level = level;
+        this.marks = new int[marksCount];
     }
 
-    public Student(String name, int age)
-    {
-        this(name, age, 1);
+    public Student(String name, int age, int marksCount) {
+        this(name, age, 1, marksCount);
     }
 
     @Override
@@ -23,7 +26,23 @@ public class Student
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", level=" + level +
+                ", marks=" + Arrays.toString(marks) +
                 '}';
+    }
+
+    public void setMark(int index, int mark)
+    {
+        if(index < 0 || index >= marks.length) {
+            System.out.println("Неверный номер семестра: " + index);
+            return;
+        }
+
+        if(mark < 2 || mark > 5) {
+            System.out.println("Неверная оценка: " + mark);
+            return;
+        }
+
+        marks[index] = mark;
     }
 
     public String getName() {
@@ -48,5 +67,9 @@ public class Student
 
     public void setLevel(int level) {
         this.level = level;
+    }
+
+    public int[] getMarks() {
+        return marks;
     }
 }
