@@ -14,18 +14,22 @@ public class Main
     все поля приватные + геттеры и сеттеры
     переопределить вывод
 
+    Group
+    - String title
+    - int studentCount
+
     Teacher
     - String name
     - int age
     - String subject
     - int exp
-    - String[] groups //длина либо, получаете длину в конструкторе и инициализируете с ней
+    - Group[] groups
 
-    - public boolean hasGroup(String group)
+    - public boolean hasGroup(String groupTitle)
         проверка есть ли группа в массииве
-    - public void addGroup(String group)
+    - public void addGroup(String groupTitle)
         добавление группы в массив если ее там нет
-    - public void removeGroup(String group)
+    - public void removeGroup(String groupTitle)
         уставновка null вместо группы, если она существует
 
     создать объект класса и вывести в консоль
@@ -40,6 +44,13 @@ public class Main
                 20,
                 new String[] {"223", "224", null, null, "448"}
         );
+
+        /*Teacher[] teachers = new Teacher[] {
+                    new Teacher(...),
+                    new Teacher(...),
+                    new Teacher(...),
+                    new Teacher(...)
+        };*/
 
         System.out.println(teacher);
         System.out.println(teacher.hasGroup("224"));
