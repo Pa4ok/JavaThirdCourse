@@ -42,25 +42,27 @@ public class Main
                 40,
                 "math",
                 20,
-                new String[] {"223", "224", null, null, "448"}
+                new Group[] {
+                        new Group("223", 15),
+                        new Group("224", 4),
+                        new Group("225", 145),
+                        new Group("226", 155),
+                        null,
+                        new Group("227", 16),
+                        new Group("228", 19),
+                        null
+                }
         );
-
-        /*Teacher[] teachers = new Teacher[] {
-                    new Teacher(...),
-                    new Teacher(...),
-                    new Teacher(...),
-                    new Teacher(...)
-        };*/
 
         System.out.println(teacher);
         System.out.println(teacher.hasGroup("224"));
         System.out.println(teacher.hasGroup("22fewf4"));
-        teacher.addGroup("445");
-        teacher.addGroup("55555");
-        teacher.addGroup("vrgfgre");
+        teacher.addGroup(new Group("445", 445));
+        teacher.addGroup(new Group("55555", 54));
+        teacher.addGroup(new Group("vrgfgre", 43));
         System.out.println(teacher);
         teacher.removeGroup("fff");
-        teacher.removeGroup("224");
+        teacher.removeGroup("228");
         System.out.println(teacher);
     }
 }

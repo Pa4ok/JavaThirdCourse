@@ -8,9 +8,9 @@ public class Teacher
     private int age;
     private String subject;
     private int exp;
-    private String[] groups;
+    private Group[] groups;
 
-    public Teacher(String name, int age, String subject, int exp, String[] groups)
+    public Teacher(String name, int age, String subject, int exp, Group[] groups)
     {
         this.name = name;
         this.age = age;
@@ -21,21 +21,21 @@ public class Teacher
 
     public Teacher(String name, int age, String subject, int exp, int groupCount)
     {
-        this(name, age, subject, exp, new String[groupCount]);
+        this(name, age, subject, exp, new Group[groupCount]);
     }
 
-    public boolean hasGroup(String group)
+    public boolean hasGroup(String groupTitle)
     {
-        for(String s : groups)
+        for(int i=0; i<groups.length; i++)
         {
-            if(group.equals(s)) {
+            if(groups[i] != null && groups[i].getTitle().equals(groupTitle)) {
                 return true;
             }
         }
         return false;
     }
 
-    public void addGroup(String group)
+    public void addGroup(Group group)
     {
         for(int i=0; i<groups.length; i++)
         {
@@ -47,16 +47,16 @@ public class Teacher
         System.out.println("Для группы нет места: " + group);
     }
 
-    public void removeGroup(String group)
+    public void removeGroup(String groupTitle)
     {
         for(int i=0; i<groups.length; i++)
         {
-            if(group.equals(groups[i])) {
+            if(groups[i] != null && groups[i].getTitle().equals(groupTitle)) {
                 groups[i] = null;
                 return;
             }
         }
-        System.out.println("Такой группы нет: " + group);
+        System.out.println("Такой группы нет: " + groupTitle);
     }
 
     @Override
@@ -102,11 +102,11 @@ public class Teacher
         this.exp = exp;
     }
 
-    public String[] getGroups() {
+    public Group[] getGroups() {
         return groups;
     }
 
-    public void setGroups(String[] groups) {
+    public void setGroups(Group[] groups) {
         this.groups = groups;
     }
 }
