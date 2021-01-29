@@ -11,56 +11,6 @@ public class Main
 
     public static void main(String[] args)
     {
-        /*System.out.println("Hello FSPO!");
-
-        int i = 0; //4 байта
-        float f = 0.33243F; //32 бита после запятой
-        double d = 0.554545D; //64 бита после запятой
-        char ch = 'a';
-        boolean b = true; //false
-        long l = 33224838543434324L; //8 байтов
-
-        Integer integer; //null
-        Float float_value; //null
-        Double double_value; //null
-        Boolean boolean_value; //null
-        Character character; //null
-        Long long_value; //null
-
-        Integer integer1 = 343;
-
-        //int[] arr1; //null
-        int[] arr1 = new int[10];
-        //System.out.println(arr1[0]);
-        System.out.println(Arrays.toString(arr1));
-
-        Integer[] arr2 = new Integer[10];
-        System.out.println(Arrays.toString(arr2));
-
-        int[] arr3 = { 4, 5, 6, 7 };
-        Integer[] arr4 = { 4, 5, 6, 7 };
-        System.out.println(Arrays.toString(arr3));
-        System.out.println(Arrays.toString(arr4));*/
-
-        /*while (true) {
-        }*/
-
-        /*for(int j=0; j< arr1.length; j++) {
-            arr1[j] = j+5;
-        }
-        System.out.println(Arrays.toString(arr1));
-
-        for(int j : arr1)
-        {
-            System.out.print(j + " | ");
-        }*/
-
-        //String s1; //null
-        /*String s2 = "3f4i543g453g435u3f4";
-        System.out.println(s2);
-        System.out.println(s2.toUpperCase());
-        System.out.println(s2.substring(4, 7));*/
-
         /*Scanner scanner = new Scanner(System.in);
 
         String input = scanner.nextLine();
@@ -92,5 +42,37 @@ public class Main
                ...
          */
 
+        Random rand = new Random();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.printf("Введите нижнюю границу: ");
+        int minBound = Integer.parseInt(scanner.nextLine());
+
+        System.out.printf("Введите верхнюю границу: ");
+        int maxBound = Integer.parseInt(scanner.nextLine());
+
+        System.out.printf("Введите количество попыток: ");
+        int rounds = Integer.parseInt(scanner.nextLine());
+
+        int x = minBound + rand.nextInt(maxBound - minBound + 1);
+
+        for(int i=1; i<=rounds; i++)
+        {
+            System.out.print("Введите следующее число (" + minBound + "-" + maxBound + " | " + (rounds-i+1) + " попыток): ");
+            int temp = Integer.parseInt(scanner.nextLine());
+
+            if(temp > x) {
+                System.out.println("Введенное число больше x");
+                maxBound = temp;
+            } else if(temp < x) {
+                System.out.println("Введенное число меньше x");
+                minBound = temp;
+            } else {
+                System.out.println("Вы выиграли за " + i + " попыток!");
+                return;
+            }
+        }
+
+        System.out.println("Вы проиграли! Было загадано число " + x);
     }
 }
