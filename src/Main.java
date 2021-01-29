@@ -1,5 +1,7 @@
 import java.util.Arrays;
 import java.util.Locale;
+import java.util.Random;
+import java.util.Scanner;
 
 public class Main
 {
@@ -54,9 +56,41 @@ public class Main
         }*/
 
         //String s1; //null
-        String s2 = "3f4i543g453g435u3f4";
+        /*String s2 = "3f4i543g453g435u3f4";
         System.out.println(s2);
         System.out.println(s2.toUpperCase());
-        System.out.println(s2.substring(4, 7));
+        System.out.println(s2.substring(4, 7));*/
+
+        /*Scanner scanner = new Scanner(System.in);
+
+        String input = scanner.nextLine();
+        //int i = Integer.parseInt(input) * 1000;
+        float f = Float.parseFloat(input) * 1.5F;
+
+        System.out.println("read: " + input + " " + f);*/
+
+        /*Random rand = new Random();
+        System.out.println(rand.nextInt());
+        System.out.println(rand.nextInt(1000));*/
+
+        /*
+        мин число - 1
+        макс число - 99
+
+        прогрмма выбирает рандомное число в выбранном диапазоне
+        и спрашивает у вас число, вы вводите число, программа говорит
+        больше оно или меньше загаданного рандомного
+        если вы угадали - то выводит количество шагов
+        после каждого шага диапазон обновляется
+
+        пример:
+            1) загадано число 32
+            2) текущий диапазон 1-99
+               вы спросили число 54
+               программа ответила меньше
+            3) текущий диапазон 1-53
+               ...
+         */
+
     }
 }
