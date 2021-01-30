@@ -10,55 +10,26 @@ package ru.pa4ok.app;
 public class Main
 {
     /*
-    сделать класс учителя с пакетом org.edu.school
-    все поля приватные + геттеры и сеттеры
-    переопределить вывод
 
-    Group
-    - String title
-    - int studentCount
+    Utils
+    - private static Random rand = new Random();
 
-    Teacher
-    - String name
-    - int age
-    - String subject
-    - int exp
-    - Group[] groups
+    public static int getRandIntWithBounds(int min, int max)
+        вернет рандомное число от min до max
 
-    - public boolean hasGroup(String groupTitle)
-        проверка есть ли группа в массииве
+    public static String revertSting(String s)
+        возвращает строку s задом наперед
 
-    - public void addGroup(Group group)
-        добавление группы в массив если ее там нет
 
-    - public void removeGroup(String groupTitle)
-        уставновка null вместо группы, если она существует
+    написать класс Utils и протестить его методы
 
-    создать объект класса и протестировать все методы
      */
 
     public static void main(String[] args)
     {
-        Teacher teacher = new Teacher(
-                "vasiliy",
-                30,
-                "pp",
-                10,
-                new Group[] {
-                        new Group("234", 15),
-                        new Group("235", 30),
-                        null
-                }
-        );
+        TestClass testClass = new TestClass();
 
-        System.out.println(teacher);
-        System.out.println(teacher.hasGroup("235"));
-        System.out.println(teacher.hasGroup("jrehguhrg"));
-        teacher.addGroup(new Group("236", 33));
-        teacher.addGroup(new Group("237", 10));
-        System.out.println(teacher);
-        teacher.removeGroup("234");
-        teacher.removeGroup("g4rf4343");
-        System.out.println(teacher);
+        //хороший пример использования статики - это класс Math
+        System.out.println(Math.sin(Math.PI / 2));
     }
 }
