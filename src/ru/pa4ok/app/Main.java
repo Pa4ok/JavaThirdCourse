@@ -29,6 +29,10 @@ public class Main
         вызывает 1 конструктор
         педает в него все свои аргументы
         и дополняет null номером и черным цветом
+
+    создать 2 объекта класса
+    используя разные конструторы
+    и вывести их в консоль
      */
 
     public static void main(String[] args)
@@ -39,6 +43,10 @@ public class Main
         System.out.println(book1);
         System.out.println(book2);*/
 
-        TestClass testClass = new TestClass();
+        Car car1 = new Car("киа", "рио", 3000, "голубой", "efrefrfe");
+        Car car2 = new Car("мерседес", "s777", 4000);
+
+        System.out.println(car1);
+        System.out.println(car2);
     }
 }
