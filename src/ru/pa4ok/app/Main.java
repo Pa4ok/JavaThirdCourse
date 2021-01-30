@@ -38,46 +38,26 @@ public class Main
 
     public static void main(String[] args)
     {
-        /*TestClass test = new TestClass(
-                1,
+        CarManufacturer carManufacturer = new CarManufacturer(
+                "manufacturer",
+                2000,
                 new String[] {
-                    "one",
-                    "two",
-                    "wwdwqdwq"
+                        "one",
+                        null,
+                        "two",
+                        null
                 }
         );
 
-        TestClass test1 = new TestClass(2, 5);
-
-        System.out.println(test);
-        System.out.println(test1);
-
-        test1.getComponents()[3] = "new component";
-        System.out.println(test1);*/
-
-        String[] arr = { "test" , null };
-        String test = "ejfhgowfee";
-
-        for(String s : arr)
-        {
-            /*if(test == s) {
-                //некоректно
-            }*/
-
-            /*//s может быть null поэтому можно либо поменять местами, либо сделать проверку
-            if(s.equalsIgnoreCase(test)) {
-                //...
-            }*/
-
-
-            //2 рабочих варианта
-            if(test.equalsIgnoreCase(s)) {
-                //...
-            }
-
-            if(s != null && s.equalsIgnoreCase(test)) {
-                //...
-            }
-        }
+        System.out.println(carManufacturer);
+        System.out.println(carManufacturer.hasType("two"));
+        System.out.println(carManufacturer.hasType("qowipfqfq"));
+        carManufacturer.addType("4");
+        carManufacturer.addType("5");
+        carManufacturer.addType("6");
+        System.out.println(carManufacturer);
+        carManufacturer.deleteType("5");
+        carManufacturer.deleteType("fefeeffe");
+        System.out.println(carManufacturer);
     }
 }
