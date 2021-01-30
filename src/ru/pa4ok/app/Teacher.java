@@ -8,9 +8,9 @@ public class Teacher
     private int age;
     private String subject;
     private int exp;
-    private Group[] groups;
+    private String[] groups;
 
-    public Teacher(String name, int age, String subject, int exp, Group[] groups)
+    public Teacher(String name, int age, String subject, int exp, String[] groups)
     {
         this.name = name;
         this.age = age;
@@ -19,23 +19,23 @@ public class Teacher
         this.groups = groups;
     }
 
-    public Teacher(String name, int age, String subject, int exp, int groupCount)
+    public Teacher(String name, int age, String subject, int exp, int groupsCount)
     {
-        this(name, age, subject, exp, new Group[groupCount]);
+        this(name, age, subject, exp, new String[groupsCount]);
     }
 
-    public boolean hasGroup(String groupTitle)
+    public boolean hasGroup(String group)
     {
-        for(int i=0; i<groups.length; i++)
+        for(String s : groups)
         {
-            if(groups[i] != null && groups[i].getTitle().equals(groupTitle)) {
+            if(group.equals(s)) {
                 return true;
             }
         }
         return false;
     }
 
-    public void addGroup(Group group)
+    public void addGroup(String group)
     {
         for(int i=0; i<groups.length; i++)
         {
@@ -44,19 +44,19 @@ public class Teacher
                 return;
             }
         }
-        System.out.println("Для группы нет места: " + group);
+
+        System.out.println("не хватило места для групы " + group);
     }
 
-    public void removeGroup(String groupTitle)
+    public void removeGroup(String group)
     {
         for(int i=0; i<groups.length; i++)
         {
-            if(groups[i] != null && groups[i].getTitle().equals(groupTitle)) {
+            if(group.equals(groups[i])) {
                 groups[i] = null;
                 return;
             }
         }
-        System.out.println("Такой группы нет: " + groupTitle);
     }
 
     @Override
@@ -102,11 +102,11 @@ public class Teacher
         this.exp = exp;
     }
 
-    public Group[] getGroups() {
+    public String[] getGroups() {
         return groups;
     }
 
-    public void setGroups(Group[] groups) {
+    public void setGroups(String[] groups) {
         this.groups = groups;
     }
 }

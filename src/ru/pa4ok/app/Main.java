@@ -14,22 +14,20 @@ public class Main
     все поля приватные + геттеры и сеттеры
     переопределить вывод
 
-    Group
-    - String title
-    - int studentCount
-
     Teacher
     - String name
     - int age
     - String subject
     - int exp
-    - Group[] groups
+    - String[] groups //длина либо, получаете длину в конструкторе и инициализируете с ней
 
-    - public boolean hasGroup(String groupTitle)
+    - public boolean hasGroup(String group)
         проверка есть ли группа в массииве
-    - public void addGroup(String groupTitle)
+
+    - public void addGroup(String group)
         добавление группы в массив если ее там нет
-    - public void removeGroup(String groupTitle)
+
+    - public void removeGroup(String group)
         уставновка null вместо группы, если она существует
 
     создать объект класса и вывести в консоль
@@ -38,31 +36,25 @@ public class Main
     public static void main(String[] args)
     {
         Teacher teacher = new Teacher(
-                "Vasiliy Petrovi4",
-                40,
-                "math",
-                20,
-                new Group[] {
-                        new Group("223", 15),
-                        new Group("224", 4),
-                        new Group("225", 145),
-                        new Group("226", 155),
-                        null,
-                        new Group("227", 16),
-                        new Group("228", 19),
+                "vasiliy",
+                30,
+                "pp",
+                10,
+                new String[] {
+                        "234",
+                        "235",
                         null
                 }
         );
 
         System.out.println(teacher);
-        System.out.println(teacher.hasGroup("224"));
-        System.out.println(teacher.hasGroup("22fewf4"));
-        teacher.addGroup(new Group("445", 445));
-        teacher.addGroup(new Group("55555", 54));
-        teacher.addGroup(new Group("vrgfgre", 43));
+        System.out.println(teacher.hasGroup("235"));
+        System.out.println(teacher.hasGroup("jrehguhrg"));
+        teacher.addGroup("236");
+        teacher.addGroup("237");
         System.out.println(teacher);
-        teacher.removeGroup("fff");
-        teacher.removeGroup("228");
+        teacher.removeGroup("234");
+        teacher.removeGroup("g4rf4343");
         System.out.println(teacher);
     }
 }
