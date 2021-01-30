@@ -1,7 +1,5 @@
 package ru.pa4ok.app;
 
-import ru.pa4ok.test.TestClass;
-
 public class Main
 {
     /*
@@ -14,39 +12,47 @@ public class Main
     все поля приватные + геттеры и сеттеры
     переопределенный метод toString
 
-    Car
-    - String manufacturer
-    - String mark
-    - int weight
-    - String color
-    - String number
+    CarManufacturer
+    - String title
+    - int startYear
+    - String[] carTypes
 
-    1 конструктор
-        включает все поля
+    2 конструктора
+        1 - все поля
+        2 - title, startYear + переменная с размерностью массива
 
-    2 конструктор
-        запрашивает только manufacturer, mark, weight
-        вызывает 1 конструктор
-        педает в него все свои аргументы
-        и дополняет null номером и черным цветом
+    public boolean hasType(String type)
+        проверить есть ли type в массиве carTypes
 
-    создать 2 объекта класса
-    используя разные конструторы
-    и вывести их в консоль
+    public void addType(String type)
+        если в массиве carTypes есть null элемент
+        заменить его на type
+        если таковых нет, то уведомить об этои
+
+    public void deleteType(String type)
+        если в массиве carTypes есть type
+        то замеенить его на null элемент
+
+    создать объет класса и протестировать методы
      */
 
     public static void main(String[] args)
     {
-        /*Book book1 = new Book("test title", "test author", 1800);
-        Book book2 = new Book();
+        TestClass test = new TestClass(
+                1,
+                new String[] {
+                    "one",
+                    "two",
+                    "wwdwqdwq"
+                }
+        );
 
-        System.out.println(book1);
-        System.out.println(book2);*/
+        TestClass test1 = new TestClass(2, 5);
 
-        Car car1 = new Car("киа", "рио", 3000, "голубой", "efrefrfe");
-        Car car2 = new Car("мерседес", "s777", 4000);
+        System.out.println(test);
+        System.out.println(test1);
 
-        System.out.println(car1);
-        System.out.println(car2);
+        test1.getComponents()[3] = "new component";
+        System.out.println(test1);
     }
 }
