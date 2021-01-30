@@ -7,6 +7,8 @@ package ru.pa4ok.app;
     CTRL-ALT-L - форматирование кода (стиль)
      */
 
+import java.util.Random;
+
 public class Main
 {
     /*
@@ -27,9 +29,27 @@ public class Main
 
     public static void main(String[] args)
     {
-        TestClass testClass = new TestClass();
+        //TestClass testClass = new TestClass();
 
         //хороший пример использования статики - это класс Math
-        System.out.println(Math.sin(Math.PI / 2));
+        //System.out.println(Math.sin(Math.PI / 2));
+
+        /*Random rand = new Random();
+
+        System.out.println(rand.nextInt());
+        System.out.println(rand.nextInt(100)); //0-99
+        System.out.println(rand.nextFloat()); //0-1
+        System.out.println(rand.nextDouble()); //0-1
+
+        String s = "dwdw";
+        s.length();
+
+        int min = 50;
+        int max = 100;
+        int randWithBorder = 50 + rand.nextInt(max - min + 1);
+        System.out.println(randWithBorder);*/
+
+        System.out.println(Utils.getRandIntWithBounds(50, 100));
+        System.out.println(Utils.revertSting("abcdefg"));
     }
 }
