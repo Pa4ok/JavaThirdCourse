@@ -38,7 +38,7 @@ public class Main
 
     public static void main(String[] args)
     {
-        TestClass test = new TestClass(
+        /*TestClass test = new TestClass(
                 1,
                 new String[] {
                     "one",
@@ -53,6 +53,31 @@ public class Main
         System.out.println(test1);
 
         test1.getComponents()[3] = "new component";
-        System.out.println(test1);
+        System.out.println(test1);*/
+
+        String[] arr = { "test" , null };
+        String test = "ejfhgowfee";
+
+        for(String s : arr)
+        {
+            /*if(test == s) {
+                //некоректно
+            }*/
+
+            /*//s может быть null поэтому можно либо поменять местами, либо сделать проверку
+            if(s.equalsIgnoreCase(test)) {
+                //...
+            }*/
+
+
+            //2 рабочих варианта
+            if(test.equalsIgnoreCase(s)) {
+                //...
+            }
+
+            if(s != null && s.equalsIgnoreCase(test)) {
+                //...
+            }
+        }
     }
 }
