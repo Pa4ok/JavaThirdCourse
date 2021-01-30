@@ -43,33 +43,25 @@ public class Main
 
     public static void main(String[] args)
     {
-        /*CarManufacturer carManufacturer = new CarManufacturer(
+        CarManufacturer carManufacturer = new CarManufacturer(
                 "manufacturer",
                 2000,
-                new String[] {
-                        "one",
+                new CarType[] {
+                        new CarType("1", 1, 1),
                         null,
-                        "two",
-                        null
+                        new CarType("2", 2, 2)
                 }
         );
 
         System.out.println(carManufacturer);
         System.out.println(carManufacturer.hasType("two"));
         System.out.println(carManufacturer.hasType("qowipfqfq"));
-        carManufacturer.addType("4");
+        /*carManufacturer.addType("4");
         carManufacturer.addType("5");
-        carManufacturer.addType("6");
+        carManufacturer.addType("6");*/
         System.out.println(carManufacturer);
         carManufacturer.deleteType("5");
         carManufacturer.deleteType("fefeeffe");
-        System.out.println(carManufacturer);*/
-
-        for(CarManufacturer c : new CarManufacturer[5])
-        {
-            if(c != null && c.getTitle().equals("4444")) {
-                //...
-            }
-        }
+        System.out.println(carManufacturer);
     }
 }

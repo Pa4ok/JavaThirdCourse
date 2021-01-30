@@ -6,34 +6,34 @@ public class CarManufacturer
 {
     private String title;
     private int startYear;
-    private String[] carTypes;
+    private CarType[] carTypes;
 
-    public CarManufacturer(String title, int startYear, String[] carTypes) {
+    public CarManufacturer(String title, int startYear, CarType[] carTypes) {
         this.title = title;
         this.startYear = startYear;
         this.carTypes = carTypes;
     }
 
     public CarManufacturer(String title, int startYear, int length) {
-        this(title, startYear, new String[length]);
+        this(title, startYear, new CarType[length]);
     }
 
     public boolean hasType(String type)
     {
-        for(String s : carTypes) {
-            if(type.equals(s)) {
+        for(CarType c : carTypes) {
+            if(c != null && c.getTitle().equals(type)) {
                 return true;
             }
         }
         return false;
     }
 
-    public void addType(String type)
+    public void addType(CarType carType)
     {
         for(int i=0; i< carTypes.length; i++)
         {
             if(carTypes[i] == null) {
-                carTypes[i] = type;
+                carTypes[i] = carType;
                 return;
             }
         }
@@ -44,7 +44,7 @@ public class CarManufacturer
     {
         for(int i=0; i< carTypes.length; i++)
         {
-            if(type.equals(carTypes[i])) {
+            if(carTypes[i] != null && carTypes[i].getTitle().equals(type)) {
                 carTypes[i] = null;
                 return;
             }
@@ -76,11 +76,11 @@ public class CarManufacturer
         this.startYear = startYear;
     }
 
-    public String[] getCarTypes() {
+    public CarType[] getCarTypes() {
         return carTypes;
     }
 
-    public void setCarTypes(String[] carTypes) {
+    public void setCarTypes(CarType[] carTypes) {
         this.carTypes = carTypes;
     }
 }
