@@ -14,23 +14,27 @@ public class Main
     все поля приватные + геттеры и сеттеры
     переопределить вывод
 
+    Group
+    - String title
+    - int studentCount
+
     Teacher
     - String name
     - int age
     - String subject
     - int exp
-    - String[] groups //длина либо, получаете длину в конструкторе и инициализируете с ней
+    - Group[] groups
 
-    - public boolean hasGroup(String group)
+    - public boolean hasGroup(String groupTitle)
         проверка есть ли группа в массииве
 
-    - public void addGroup(String group)
+    - public void addGroup(Group group)
         добавление группы в массив если ее там нет
 
-    - public void removeGroup(String group)
+    - public void removeGroup(String groupTitle)
         уставновка null вместо группы, если она существует
 
-    создать объект класса и вывести в консоль
+    создать объект класса и протестировать все методы
      */
 
     public static void main(String[] args)
@@ -56,5 +60,14 @@ public class Main
         teacher.removeGroup("234");
         teacher.removeGroup("g4rf4343");
         System.out.println(teacher);
+
+        /*
+        for(Group g : this.groups)
+        {
+            if(g != null && g.getTitle().equals(...) {
+                //...
+            }
+        }
+         */
     }
 }
