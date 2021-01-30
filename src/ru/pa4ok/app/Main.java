@@ -12,10 +12,15 @@ public class Main
     все поля приватные + геттеры и сеттеры
     переопределенный метод toString
 
+    CarType
+    - String title
+    - int power
+    - int weight
+
     CarManufacturer
     - String title
     - int startYear
-    - String[] carTypes
+    - CarType[] carTypes
 
     2 конструктора
         1 - все поля
@@ -38,7 +43,7 @@ public class Main
 
     public static void main(String[] args)
     {
-        CarManufacturer carManufacturer = new CarManufacturer(
+        /*CarManufacturer carManufacturer = new CarManufacturer(
                 "manufacturer",
                 2000,
                 new String[] {
@@ -58,6 +63,13 @@ public class Main
         System.out.println(carManufacturer);
         carManufacturer.deleteType("5");
         carManufacturer.deleteType("fefeeffe");
-        System.out.println(carManufacturer);
+        System.out.println(carManufacturer);*/
+
+        for(CarManufacturer c : new CarManufacturer[5])
+        {
+            if(c != null && c.getTitle().equals("4444")) {
+                //...
+            }
+        }
     }
 }
