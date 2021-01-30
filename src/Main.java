@@ -26,85 +26,37 @@ public class Main
 
     public static void main(String[] args)
     {
-        /*int i; //0 4 байта
-        float f = 5.5454F; //32 бита после запятой
-        double d = 5.443453D; //64 бита после запятой
-        boolean b; //false
-        long l; //целое число 8 байтов
-        char c = 'ё';
+        Random rand = new Random();
+        Scanner scanner = new Scanner(System.in);
 
-        Integer integer_value; //null
-        Float float_value; //null
-        Double double_value; //null
-        Boolean boolean_value; //null
-        Long long_value; //null
-        Character character; //null
+        System.out.print("Введите нижнюю граниицу: ");
+        int minBound = Integer.parseInt(scanner.nextLine());
 
-        Integer integer1 = 3434;
-        Float fdwe = 43434.43F;*/
+        System.out.print("Введите верхнюю граниицу: ");
+        int maxBound = Integer.parseInt(scanner.nextLine());
 
-        /*String s; //null
-        String s1 = "fewfwefjwef";
-        System.out.println(s1.toUpperCase());
-        s1 += "4444";
-        s1 += 4;
-        System.out.println(s1);
-        */
+        System.out.print("Введите количество попыток: ");
+        int chances = Integer.parseInt(scanner.nextLine());
 
-        /*String s3 = "25";
-        int i1 = 30 + Integer.parseInt(s3);
-        System.out.println(i1);*/
+        int x = minBound + rand.nextInt(maxBound - minBound + 1);
 
-        String p1 = "34434243";
-        String p2 = "34434243";
+        for(int i=1; i<= chances; i++)
+        {
+            System.out.printf("Введите число от " + minBound + " до " + maxBound + " (попытка " + i + "): ");
+            int j = Integer.parseInt(scanner.nextLine());
 
-        /*//не корректно
-        if(p1 == p2) {
-            System.out.println("равны");
-        } else {
-            System.out.println("не равны");
+            if(x > j) {
+                System.out.println("Число больше");
+                minBound = j;
+            } else if(x < j) {
+                System.out.println("Число меньше");
+                maxBound = j;
+            } else {
+                System.out.println("Вы выиграли!");
+                return;
+            }
         }
 
-        //корректно
-        if(p1.equals(p2)) {
-            //....
-        }*/
-
-        //int[] arr; //null
-        /*int[] arr1 = new int[10];
-        System.out.println(Arrays.toString(arr1));
-
-        //Integer[] arr2 = new Integer[10];
-        //System.out.println(Arrays.toString(arr2));
-
-        for(int i=0; i<arr1.length; i++) {
-            arr1[i] = i + 10;
-        }
-
-        System.out.println(Arrays.toString(arr1));
-
-        for(int i : arr1) {
-            System.out.printf(i + " | ");
-        }
-        System.out.println();
-
-        String s3 = "start-" + (arr1[0] == 11 ? "1" : "2");
-        System.out.println(s3);*/
-
-        /*Scanner scanner = new Scanner(System.in);
-
-        String s = scanner.nextLine();
-        int i = Integer.parseInt(s);
-        i += 100;
-        System.out.println(i);*/
-
-        /*Random rand = new Random();
-
-        System.out.println(rand.nextInt());
-        System.out.println(rand.nextInt(100)); //0-99
-        System.out.println(rand.nextFloat()); //float от 0 до 1
-
-        //50-100
-        int i = 50 + rand.nextInt(50);*/
+        System.out.println("Вы проиграли, число было " + x);
     }
 }
