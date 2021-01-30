@@ -44,9 +44,9 @@ public class Main
                 30,
                 "pp",
                 10,
-                new String[] {
-                        "234",
-                        "235",
+                new Group[] {
+                        new Group("234", 15),
+                        new Group("235", 30),
                         null
                 }
         );
@@ -54,20 +54,11 @@ public class Main
         System.out.println(teacher);
         System.out.println(teacher.hasGroup("235"));
         System.out.println(teacher.hasGroup("jrehguhrg"));
-        teacher.addGroup("236");
-        teacher.addGroup("237");
+        teacher.addGroup(new Group("236", 33));
+        teacher.addGroup(new Group("237", 10));
         System.out.println(teacher);
         teacher.removeGroup("234");
         teacher.removeGroup("g4rf4343");
         System.out.println(teacher);
-
-        /*
-        for(Group g : this.groups)
-        {
-            if(g != null && g.getTitle().equals(...) {
-                //...
-            }
-        }
-         */
     }
 }
