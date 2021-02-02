@@ -1,5 +1,8 @@
-package org.edu.school;
+package org.edu.school.lib;
 
+
+import org.edu.school.lib.Book;
+import org.edu.school.lib.Library;
 
 import java.util.Arrays;
 

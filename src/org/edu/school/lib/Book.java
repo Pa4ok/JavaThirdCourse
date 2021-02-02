@@ -1,4 +1,4 @@
-package org.edu.school;
+package org.edu.school.lib;
 
 public class Book
 {
