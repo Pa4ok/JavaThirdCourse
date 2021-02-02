@@ -17,6 +17,22 @@ public class Library
         this(title, new Book[booksCount]);
     }
 
+    public void addBookCopy(int pos, Book book)
+    {
+        this.books[pos] = book.copy();
+    }
+
+    public Library copy()
+    {
+        Library newLibrary = new Library(this.title, books.length);
+
+        for(int i=0; i<books.length; i++) {
+            newLibrary.getBooks()[i] = this.books[i].copy();
+        }
+
+        return newLibrary;
+    }
+
     public int getAllPages()
     {
         int c = 0;
@@ -57,7 +73,7 @@ public class Library
         if(count > 0) {
             for(Book b : books) {
                 if(b != null && author.equals(b.getAuthor())) {
-                    targets[i] = b;
+                    targets[i] = b.copy();
                     i++;
                 }
             }

@@ -31,22 +31,41 @@ public class Main
     public Book[] getAuthorBooks(String author)
         метод вернет новый массив книг
         которые написаны автором author
+        возврать метод должен массив с копиями книг
 
     создать объект класса и протестировать функции
      */
 
     public static void main(String[] args)
     {
-        Library lib = new Library("eofhofew", 3);
+        Book book1 = new Book("title1", "author1", 100);
+        Book book2 = new Book("title3", "author3", 350);
+        Book book3 = new Book("title3", "author2", 350);
+        Book book4 = new Book("title3", "author1", 350);
+        Book book5 = new Book("title3", "author3", 350);
+        Book book7 = new Book("title3", "author3", 350);
+
+        Library lib = new Library(
+                "eofhofew",
+                new Book[] {
+                        book1,
+                        book2,
+                        book3,
+                        book4,
+                        book5,
+                        book7
+                }
+        );
         System.out.println(lib);
 
-        lib.getBooks()[0] = new Book("title1", "author1", 100);
-        lib.getBooks()[2] = new Book("title3", "author3", 350);
+        book1.setTitle("new super mega title");
         System.out.println(lib);
 
-        System.out.println(lib.getAllPages());
-        System.out.println(lib.hasBook("title1"));
-        System.out.println(lib.hasBook("title4"));
-        System.out.println(Arrays.toString(lib.getAuthorBooks("author1")));
+        System.out.println();
+        Book[] arr = lib.getAuthorBooks("author3");
+        System.out.println(Arrays.toString(arr));
+        arr[0].setTitle("dffffffffffffffffffffffffffffffff");
+        System.out.println(Arrays.toString(arr));
+        System.out.println(lib);
     }
 }

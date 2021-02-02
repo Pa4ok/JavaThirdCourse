@@ -12,6 +12,11 @@ public class Book
         this.pages = pages;
     }
 
+    public Book copy()
+    {
+        return new Book(this.title, this.author, this.pages);
+    }
+
     @Override
     public String toString() {
         return "Book{" +
