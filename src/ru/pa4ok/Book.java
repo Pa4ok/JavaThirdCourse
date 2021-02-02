@@ -2,43 +2,68 @@ package ru.pa4ok;
 
 public class Book
 {
-    /*
-    статика инициализируется во время первого обращения к классу
-     */
+    private static int idCounter = 1;
 
-    public static int intStatic = 5;
+    private int id;
+    private String title;
+    private String author;
+    private int pages;
 
-    static
+    public Book(String title, String author, int pages)
     {
-        System.out.println("oefoehfgoefwhwe");
+        this.id = idCounter++;
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
     }
 
-    public int intBase = 10;
-
-    public Book()
-    {
-
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", pages=" + pages +
+                '}';
     }
 
-    public String testBase()
-    {
-        intStatic = 20;
-
-        return "base";
+    public static int getIdCounter() {
+        return idCounter;
     }
 
-    public static String testStatic()
-    {
-        //так как метод не привязан к объету
-        //нельзя обратится к нестатичным элементам
-        //тк для них нужен объект
-        //intBase = 0;
-
-        return "static";
+    public static void setIdCounter(int idCounter) {
+        Book.idCounter = idCounter;
     }
 
-    public static void testStatic2(Book book)
-    {
-        book.intBase = 10;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public int getPages() {
+        return pages;
+    }
+
+    public void setPages(int pages) {
+        this.pages = pages;
     }
 }

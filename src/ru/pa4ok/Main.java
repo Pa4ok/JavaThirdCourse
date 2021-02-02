@@ -13,32 +13,23 @@ public class Main
         приминимает title, author, pages
         в id записывает idCounter и инкрементирует idCounter
 
-    создать пару объектов Book
+    Library
+    - String title
+    - Book[] books
+    - public boolean addBook(Book book)
+        проверяет есть ли в books книга с таким же id
+        если такая книга есть - присваевает ей новый id через Book.idCounter
+        после чего пытается поставить книгу на место первого null элемента
+
+        если получилось найти и поставить книгу вместо null элемента вернуть true
+        иначе вернуть false
 
      */
 
     public static void main(String[] args)
     {
-        /*System.out.println(Book.intStatic);
-
-        Book b = new Book();
-        System.out.println(b.intBase);
-
-        System.out.println();
-
-        System.out.println(b.testBase());
-        System.out.println(Book.testStatic());
-
-        System.out.println();
-
-        Book.intStatic = 2829;
-        System.out.println(Book.intStatic);*/
-
-        /*System.out.println("main");
-        Book book = new Book();*/
-
-
-        System.out.println(Math.sin(Math.PI / 2));
-
+        System.out.println(new Book("one", "one", 22));
+        System.out.println(new Book("two", "one", 22));
+        System.out.println(new Book("three", "one", 22));
     }
 }
