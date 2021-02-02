@@ -13,18 +13,24 @@ public class Main
 {
     /*
 
-    Utils
-    - private static Random rand = new Random();
+    все поля приватные + геттеры и сеттеры
+    + метод toString()
 
-    public static int getRandIntWithBounds(int min, int max)
-        вернет рандомное число от min до max
+    Book
+    - static int idCounter 
+    - int id
+    - String title
+    - String author
+    - int pages
 
-    public static String revertSting(String s)
-        возвращает строку s задом наперед
+   - конструктор книги
+        он принимает и инициализирует title, author, pages
+        в id он присвает текущее значение idCounter
+        и увеличивает(idCounter) его на 1
 
 
-    написать класс Utils и протестить его методы
-
+    написать класс Book и создать пару объектов
+    проверить выдачу idшников
      */
 
     public static void main(String[] args)
@@ -49,7 +55,10 @@ public class Main
         int randWithBorder = 50 + rand.nextInt(max - min + 1);
         System.out.println(randWithBorder);*/
 
-        System.out.println(Utils.getRandIntWithBounds(50, 100));
-        System.out.println(Utils.revertSting("abcdefg"));
+        //System.out.println(Utils.getRandIntWithBounds(50, 100));
+        //System.out.println(Utils.revertSting("abcdefg"));'
+
+        TestClass.intRandom();
+        System.out.println(TestClass.i);
     }
 }

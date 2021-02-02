@@ -25,10 +25,14 @@ public class TestClass
         System.out.println("static method");
     }
 
-    public TestClass()
+    private String title;
+
+    public TestClass(String title)
     {
         //из обычных же метов спокойно можно обратиться к статике
         i *= 10;
+
+        this.title = title;
     }
 
     //статичная функция
