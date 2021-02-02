@@ -28,8 +28,12 @@ public class Main
 
     public static void main(String[] args)
     {
-        System.out.println(new Book("one", "one", 22));
-        System.out.println(new Book("two", "one", 22));
-        System.out.println(new Book("three", "one", 22));
+        Library library = new Library("fiwqhfw", 3);
+        System.out.println(library);
+        System.out.println(library.addBook(new Book("one", "one", 22)));
+        System.out.println(library.addBook(new Book("two", "one", 22)));
+        System.out.println(library.addBook(new Book(2, "two", "one", 22)));
+        System.out.println(library.addBook(new Book("two", "one", 22)));
+        System.out.println(library);
     }
 }

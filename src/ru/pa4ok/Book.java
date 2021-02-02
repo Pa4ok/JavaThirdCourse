@@ -9,12 +9,24 @@ public class Book
     private String author;
     private int pages;
 
+    public Book(int id, String title, String author, int pages) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+    }
+
     public Book(String title, String author, int pages)
     {
         this.id = idCounter++;
         this.title = title;
         this.author = author;
         this.pages = pages;
+    }
+
+    public static int incrementAndGetId()
+    {
+        return idCounter++;
     }
 
     @Override
