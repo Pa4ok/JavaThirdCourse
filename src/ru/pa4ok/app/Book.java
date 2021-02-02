@@ -27,6 +27,11 @@ public class Book
                 '}';
     }
 
+    public static int incrementAndGetId()
+    {
+        return ++idCounter;
+    }
+
     public static int getIdCounter() {
         return idCounter;
     }

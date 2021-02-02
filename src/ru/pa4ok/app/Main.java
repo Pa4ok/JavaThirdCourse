@@ -74,8 +74,13 @@ public class Main
         Book book2 = new Book("вторая", "автор2", 100);
         Book book3 = new Book("третья", "автор3", 545);
 
-        System.out.println(book1);
-        System.out.println(book2);
-        System.out.println(book3);
+        Library library = new Library("ewgbiuhfwefew", 3);
+        System.out.println(library);
+        library.addBook(book1);
+        book2.setId(-1);
+        library.addBook(book2);
+        book3.setId(4);
+        library.addBook(book3);
+        System.out.println(library);
     }
 }
