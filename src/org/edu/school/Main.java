@@ -1,6 +1,8 @@
 package org.edu.school;
 
 
+import java.util.Arrays;
+
 public class Main
 {
     /*
@@ -35,6 +37,16 @@ public class Main
 
     public static void main(String[] args)
     {
-        
+        Library lib = new Library("eofhofew", 3);
+        System.out.println(lib);
+
+        lib.getBooks()[0] = new Book("title1", "author1", 100);
+        lib.getBooks()[2] = new Book("title3", "author3", 350);
+        System.out.println(lib);
+
+        System.out.println(lib.getAllPages());
+        System.out.println(lib.hasBook("title1"));
+        System.out.println(lib.hasBook("title4"));
+        System.out.println(Arrays.toString(lib.getAuthorBooks("author1")));
     }
 }
