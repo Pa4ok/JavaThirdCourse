@@ -32,4 +32,33 @@ public class NewMain
     - double frequency
 
      */
+
+    public static void main(String[] args)
+    {
+        CPU cpu = new CPU("i9900k", 8, 3.6, 5.0);
+        GPU gpu = new GPU("3070", 8192, true);
+        Memory memory1 = new Memory(4096, 2666);
+        Memory memory2 = new Memory(4096, 2666);
+
+        Computer computer1 = new Computer(
+                cpu.copy(),
+                gpu,
+                new Memory[]{
+                        memory1,
+                        memory2
+                }
+        );
+
+        Computer computer2 = computer1.copy();
+
+        System.out.println(computer1);
+        System.out.println(computer2);
+
+        System.out.println();
+
+        computer1.getGpu().setRtx(false);
+        System.out.println(computer1);
+        System.out.println(computer2);
+    }
 }
+
