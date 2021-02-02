@@ -16,8 +16,21 @@ public class Main
     все поля приватные + геттеры и сеттеры
     + метод toString()
 
+    Library
+    - String title
+    - Book[] books
+    public int getAllBooksPages()
+        вернет количество страниц во всех книжках (в сумме)
+    public int countAuthorBooks(String author)
+        вернет количество книг данного автора
+    public boolean addBook(Book book)
+        проверяет id книги на корректно (>0)
+        если он не корректен, то присвает новый id через Book.idCounter
+        проверяет нет ли уже в бибилиотеке книги с таким id
+        если есть, то присвает новый id через Book.idCounter
+
     Book
-    - static int idCounter 
+    - static int idCounter (тоже приватная, те нужны будут статичные геттеры и сеттеры)
     - int id
     - String title
     - String author
@@ -27,7 +40,6 @@ public class Main
         он принимает и инициализирует title, author, pages
         в id он присвает текущее значение idCounter
         и увеличивает(idCounter) его на 1
-
 
     написать класс Book и создать пару объектов
     проверить выдачу idшников
@@ -58,7 +70,12 @@ public class Main
         //System.out.println(Utils.getRandIntWithBounds(50, 100));
         //System.out.println(Utils.revertSting("abcdefg"));'
 
-        TestClass.intRandom();
-        System.out.println(TestClass.i);
+        Book book1 = new Book("первая", "автор1", 300);
+        Book book2 = new Book("вторая", "автор2", 100);
+        Book book3 = new Book("третья", "автор3", 545);
+
+        System.out.println(book1);
+        System.out.println(book2);
+        System.out.println(book3);
     }
 }
