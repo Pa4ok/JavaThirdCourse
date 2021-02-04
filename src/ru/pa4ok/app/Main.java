@@ -7,42 +7,30 @@ package ru.pa4ok.app;
     CTRL-ALT-L - форматирование кода (стиль)
      */
 
-import java.util.Random;
-
 public class Main
 {
     /*
+    все поля приватные + геттеры и сеттеры + toString()
 
-    все поля приватные + геттеры и сеттеры
-    + метод toString()
+    MathUtils
+    public static SquareEquationRoot calculateQuadraticEquation(SquareEquation squareEquation)
 
-    Library
-    - String title
-    - Book[] books
-    public int getAllBooksPages()
-        вернет количество страниц во всех книжках (в сумме)
-    public int countAuthorBooks(String author)
-        вернет количество книг данного автора
-    public boolean addBook(Book book)
-        проверяет id книги на корректно (>0)
-        если он не корректен, то присвает новый id через Book.idCounter
-        проверяет нет ли уже в бибилиотеке книги с таким id
-        если есть, то присвает новый id через Book.idCounter
+    SquareEquation //класс описывающий квадратное уравнение (коэфиценты)
+    - int a //коэфицент x^2
+    - int b //коэфицент x
+    - int c //коэфицент свободного члена
 
-    Book
-    - static int idCounter (тоже приватная, те нужны будут статичные геттеры и сеттеры)
-    - int id
-    - String title
-    - String author
-    - int pages
+    SquareEquationRoot //класс описывающий решение квадратного уравнения
+    - double x1 //1 корень
+    - double x2 //2 корень
+    - boolean noRoots //указатель на то что корней нет
+    - 2 конструктора
+        1 - принимает x1 и x2, выставляет noRoots на false
+        2 - не принимает аргументов
+            x1 и x2 выставляются нулями
+            noRoots выставляется true
 
-   - конструктор книги
-        он принимает и инициализирует title, author, pages
-        в id он присвает текущее значение idCounter
-        и увеличивает(idCounter) его на 1
-
-    написать класс Book и создать пару объектов
-    проверить выдачу idшников
+    реализовать все классы и протестировать
      */
 
     public static void main(String[] args)
@@ -50,7 +38,7 @@ public class Main
         //TestClass testClass = new TestClass();
 
         //хороший пример использования статики - это класс Math
-        //System.out.println(Math.sin(Math.PI / 2));
+        System.out.println(Math.sin(Math.PI / 2));
 
         /*Random rand = new Random();
 
@@ -70,7 +58,7 @@ public class Main
         //System.out.println(Utils.getRandIntWithBounds(50, 100));
         //System.out.println(Utils.revertSting("abcdefg"));'
 
-        Book book1 = new Book("первая", "автор1", 300);
+        /*Book book1 = new Book("первая", "автор1", 300);
         Book book2 = new Book("вторая", "автор2", 100);
         Book book3 = new Book("третья", "автор3", 545);
 
@@ -81,6 +69,6 @@ public class Main
         library.addBook(book2);
         book3.setId(4);
         library.addBook(book3);
-        System.out.println(library);
+        System.out.println(library);*/
     }
 }
