@@ -7,6 +7,9 @@ package ru.pa4ok.app;
     CTRL-ALT-L - форматирование кода (стиль)
      */
 
+import ru.pa4ok.app.math.MathUtils;
+import ru.pa4ok.app.math.SquareEquation;
+
 public class Main
 {
     /*
@@ -38,7 +41,7 @@ public class Main
         //TestClass testClass = new TestClass();
 
         //хороший пример использования статики - это класс Math
-        System.out.println(Math.sin(Math.PI / 2));
+        //System.out.println(Math.sin(Math.PI / 2));
 
         /*Random rand = new Random();
 
@@ -70,5 +73,11 @@ public class Main
         book3.setId(4);
         library.addBook(book3);
         System.out.println(library);*/
+
+        System.out.println(MathUtils.calculateQuadraticEquation(
+                new SquareEquation(
+                        -4, 0, -20
+                )
+        ));
     }
 }
