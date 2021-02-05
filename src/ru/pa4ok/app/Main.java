@@ -7,6 +7,11 @@ package ru.pa4ok.app;
     CTRL-ALT-L - форматирование кода (стиль)
      */
 
+import ru.pa4ok.app.pc.CPU;
+import ru.pa4ok.app.pc.Computer;
+import ru.pa4ok.app.pc.GPU;
+import ru.pa4ok.app.pc.Memory;
+
 public class Main
 {
     /*
@@ -44,25 +49,21 @@ public class Main
 
     public static void main(String[] args)
     {
-        Book book1 = new Book(1, "первая книга");
-        Book book2 = new Book(2, "вторая книга");
+        CPU cpu = new CPU("i9900k", 8, 3.6, 5.0);
+        GPU gpu = new GPU("1080ti", 12, false);
+        Memory[] memories = {
+                new Memory(8, 2666),
+                new Memory(8, 2666)
+        };
 
-        Library lib = new Library(
-                "библиотека 1",
-                new Book[]{
-                        book1.copy(), book2.copy()
-                }
-        );
+        Computer pc1 = new Computer(cpu, gpu, memories);
+        Computer pc2 = pc1.copy();
 
-        /*System.out.println(lib);
-        book1.setId(123);
-        book2.setTitle("543grtegt5345");
-        System.out.println(lib);*/
+        pc1.getCpu().setCores(16);
+        pc1.getGpu().setTitle("ewfhwef");
+        pc1.getMemoriesBlocks()[0].setMemory(16);
 
-        Library lib2 = lib.copy();
-
-        lib.getBooks()[0].setTitle("0485hgbkhg5");
-        System.out.println(lib);
-        System.out.println(lib2);
+        System.out.println(pc1);
+        System.out.println(pc2);
     }
 }
