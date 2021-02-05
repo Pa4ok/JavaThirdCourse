@@ -32,8 +32,6 @@ public class Main
 
      */
 
-
-
     public static void main(String[] args)
     {
         /*Book book = new Book("weghboewg", "puskin", 1725);
@@ -42,6 +40,10 @@ public class Main
         System.out.println(book);
         System.out.println(book1);*/
 
+        Animal animal = new Animal("пингвин", "птица", 2, 3, true);
+        System.out.println(animal);
 
+        Animal animal1 = new Animal("Жираф", "млекопитающее");
+        System.out.println(animal1);
     }
 }
