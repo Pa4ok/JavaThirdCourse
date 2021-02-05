@@ -7,77 +7,62 @@ package ru.pa4ok.app;
     CTRL-ALT-L - форматирование кода (стиль)
      */
 
-import ru.pa4ok.app.math.MathUtils;
-import ru.pa4ok.app.math.SquareEquation;
-
 public class Main
 {
     /*
     все поля приватные + геттеры и сеттеры + toString()
 
-    MathUtils
-    public static SquareEquationRoot calculateQuadraticEquation(SquareEquation squareEquation)
+    Computer
+    - CPU cpu
+    - GPU gpu
+    - Memory[] memoriesBlocks
+    public double getRating()
+        должен расчитать рейтинг производительноти
+        по формуле cpu.maxFrequency * 0.95 * cpu.cores + gpu.memory * 0.2 + 1 (если есть rtx)
+    public Computer copy()
+        должна скопировать объеът и все его вложенные объекты
 
-    SquareEquation //класс описывающий квадратное уравнение (коэфиценты)
-    - int a //коэфицент x^2
-    - int b //коэфицент x
-    - int c //коэфицент свободного члена
+    CPU //процессор
+    - String title
+    - int cores
+    - double minFrequency
+    - double maxFrequency
+    public Computer copy()
 
-    SquareEquationRoot //класс описывающий решение квадратного уравнения
-    - double x1 //1 корень
-    - double x2 //2 корень
-    - boolean noRoots //указатель на то что корней нет
-    - 2 конструктора
-        1 - принимает x1 и x2, выставляет noRoots на false
-        2 - не принимает аргументов
-            x1 и x2 выставляются нулями
-            noRoots выставляется true
+    GPU //видеокарта
+    - String title
+    - double memory
+    - boolean rtx
+    public Computer copy()
 
-    реализовать все классы и протестировать
+    Memory
+    - double memory
+    - double frequency
+    public Computer copy()
+
      */
 
     public static void main(String[] args)
     {
-        //TestClass testClass = new TestClass();
+        Book book1 = new Book(1, "первая книга");
+        Book book2 = new Book(2, "вторая книга");
 
-        //хороший пример использования статики - это класс Math
-        //System.out.println(Math.sin(Math.PI / 2));
+        Library lib = new Library(
+                "библиотека 1",
+                new Book[]{
+                        book1.copy(), book2.copy()
+                }
+        );
 
-        /*Random rand = new Random();
+        /*System.out.println(lib);
+        book1.setId(123);
+        book2.setTitle("543grtegt5345");
+        System.out.println(lib);*/
 
-        System.out.println(rand.nextInt());
-        System.out.println(rand.nextInt(100)); //0-99
-        System.out.println(rand.nextFloat()); //0-1
-        System.out.println(rand.nextDouble()); //0-1
+        Library lib2 = lib.copy();
 
-        String s = "dwdw";
-        s.length();
-
-        int min = 50;
-        int max = 100;
-        int randWithBorder = 50 + rand.nextInt(max - min + 1);
-        System.out.println(randWithBorder);*/
-
-        //System.out.println(Utils.getRandIntWithBounds(50, 100));
-        //System.out.println(Utils.revertSting("abcdefg"));'
-
-        /*Book book1 = new Book("первая", "автор1", 300);
-        Book book2 = new Book("вторая", "автор2", 100);
-        Book book3 = new Book("третья", "автор3", 545);
-
-        Library library = new Library("ewgbiuhfwefew", 3);
-        System.out.println(library);
-        library.addBook(book1);
-        book2.setId(-1);
-        library.addBook(book2);
-        book3.setId(4);
-        library.addBook(book3);
-        System.out.println(library);*/
-
-        System.out.println(MathUtils.calculateQuadraticEquation(
-                new SquareEquation(
-                        -4, 0, -20
-                )
-        ));
+        lib.getBooks()[0].setTitle("0485hgbkhg5");
+        System.out.println(lib);
+        System.out.println(lib2);
     }
 }
