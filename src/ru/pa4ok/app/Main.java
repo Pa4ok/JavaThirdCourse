@@ -27,18 +27,18 @@ public class Main
     - int cores
     - double minFrequency
     - double maxFrequency
-    public Computer copy()
+    public CPU copy()
 
     GPU //видеокарта
     - String title
     - double memory
     - boolean rtx
-    public Computer copy()
+    public GPU copy()
 
     Memory
     - double memory
     - double frequency
-    public Computer copy()
+    public Memory copy()
 
      */
 
