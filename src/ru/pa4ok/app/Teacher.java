@@ -8,9 +8,9 @@ public class Teacher
     private String name;
     private String subject;
     private int exp;
-    private String[] groups;
+    private Group[] groups;
 
-    public Teacher(String name, String subject, int exp, String[] groups)
+    public Teacher(String name, String subject, int exp, Group[] groups)
     {
         this.name = name;
         this.subject = subject;
@@ -20,38 +20,36 @@ public class Teacher
 
     public Teacher(String name, String subject, int exp, int groupsSize)
     {
-        this(name, subject, exp, new String[groupsSize]);
+        this(name, subject, exp, new Group[groupsSize]);
     }
 
-    public boolean hasGroup(String g)
+    public boolean hasGroup(String title)
     {
-        for(String s : groups)
+        for(Group group : groups)
         {
-            if(g.equals(s)) {
+            if(group != null && group.getTitle().equals(title)) {
                 return true;
             }
         }
         return false;
     }
 
-    public boolean addGroup(String g)
+    public boolean addGroup(Group group)
     {
         for(int i=0; i<groups.length; i++)
         {
             if(groups[i] == null) {
-                groups[i] = g;
+                groups[i] = group;
                 return true;
-            } else if(groups[i].equals(g)) {
-                return false;
             }
         }
         return false;
     }
 
-    public boolean removeGroup(String g)
+    public boolean removeGroup(String title)
     {
         for(int i=0; i<groups.length; i++) {
-            if(g.equals(groups[i])) {
+            if(groups[i] != null && groups[i].getTitle().equals(title)) {
                 groups[i] = null;
                 return true;
             }
@@ -99,11 +97,11 @@ public class Teacher
         this.exp = exp;
     }
 
-    public String[] getGroups() {
+    public Group[] getGroups() {
         return groups;
     }
 
-    public void setGroups(String[] groups) {
+    public void setGroups(Group[] groups) {
         this.groups = groups;
     }
 }

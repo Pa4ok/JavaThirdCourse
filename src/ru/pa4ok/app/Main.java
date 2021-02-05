@@ -72,14 +72,16 @@ public class Main
                 "jgrhgw",
                 "krefghorghf",
                 54,
-                new String[] {
-                        "55", "56", null
+                new Group[] {
+                        new Group("23", 23),
+                        new Group("55", 30),
+                        null
                 }
         );
 
-        System.out.println(teacher.hasGroup("55"));
-        System.out.println(teacher.hasGroup("57"));
-        System.out.println(teacher.addGroup("oeghoiefg"));
-        System.out.println(teacher.addGroup("oeghoiefg"));
+        System.out.println(teacher.hasGroup("23"));
+        System.out.println(teacher.hasGroup("5454534"));
+        System.out.println(teacher.addGroup(new Group("44334534", 443)));
+        System.out.println(teacher.addGroup(new Group("t55", 43)));
     }
 }
