@@ -1,7 +1,5 @@
 package ru.pa4ok.app;
 
-import ru.pa4ok.test.TestClass;
-
 public class Main
 {
     /*
@@ -23,57 +21,42 @@ public class Main
 
     CPU //процессор
     - String title
-    - int cores
-    - float minFrequency
-    - float maxFrequency
+    - int cores //4, 8, 16
+    - float minFrequency //1.5, 2,6, 3,6
+    - float maxFrequency //2,6, 4,1, 5,0
 
     GPU //видеокарта
     - String title
-    - float memory
+    - float memory //2, 4, 6, 12, 16
     - boolean rtx
 
     Memory
-    - float memory
-    - float frequency
+    - float memory //2, 4, 8, 16
+    - float frequency //2400, 2666
 
      */
 
     public static void main(String[] args)
     {
-        /*Student student1 = new Student(
-                "petya",
-                3,
-                new int[] {
-                        4, 5, 4, 3
+        Computer pc1 = new Computer(
+                new CPU(
+                        "i9900k",
+                        8,
+                        3.6F,
+                        5.0F
+                ),
+                new GPU(
+                        "1080ti",
+                        12,
+                        false
+                ),
+                new Memory[] {
+                        new Memory(8, 2666),
+                        new Memory(8, 2666)
                 }
         );
 
-        Student student2 = new Student(
-                "vasya",
-                2,
-                3
-        );
-        student2.getMarks()[0] = 4;
-        student2.getMarks()[1] = 3;
-        student2.getMarks()[2] = 5;
-
-        System.out.println(student1);
-        System.out.println(student2);*/
-
-        Teacher teacher = new Teacher(
-                "jgrhgw",
-                "krefghorghf",
-                54,
-                new Group[] {
-                        new Group("23", 23),
-                        new Group("55", 30),
-                        null
-                }
-        );
-
-        System.out.println(teacher.hasGroup("23"));
-        System.out.println(teacher.hasGroup("5454534"));
-        System.out.println(teacher.addGroup(new Group("44334534", 443)));
-        System.out.println(teacher.addGroup(new Group("t55", 43)));
+        System.out.println(pc1);
+        System.out.println(pc1.getRating());
     }
 }
