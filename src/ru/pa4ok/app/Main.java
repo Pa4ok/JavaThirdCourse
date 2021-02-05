@@ -11,38 +11,30 @@ public class Main
      */
 
     /*
-    все поля приватные + геттеры и сеттеры
-    +кастомный метод toString
+    все поля приватные + геттеры и сеттеры + toString()
 
-    Teacher
-    - String name
-    - String subject
-    - int exp //стаж
-    - Group[] groups
-    - 2 конструктрора
-        1 принимает и инициализирует все переменные
-        2 принимает и инициализирует все кроме массива
-            +принимает длину массива и инициализирует его пустым
-    - public boolean hasGroup(String g)
-        метод должен проверить если в массиве groups группа с названием g
-    - public boolean removeGroup(String g)
-        метод должен заменить группу с названием g в массиве groups на null
-        если замена произошла вернуть true
-        если такого элемента не было false
-    - public boolean addGroup(Group group)
-        если в массиве groups есть null элемент
-        он заменяется на g и возвращается true
-        если такого нет возвращается false
+    Computer
+    - CPU cpu
+    - GPU gpu
+    - Memory[] memoriesBlocks
+    public float getRating()
+        должен расчитать рейтинг производительноти
+        по формуле cpu.maxFrequency * 0.95 * cpu.cores + gpu.memory * 0.2 + 1 (если есть rtx)
 
-     Group
-     - String title
-     - int studentCount
+    CPU //процессор
+    - String title
+    - int cores
+    - float minFrequency
+    - float maxFrequency
 
+    GPU //видеокарта
+    - String title
+    - float memory
+    - boolean rtx
 
-     если groups[i] будет равен null - мы словим ошибку
-     if(groups[i].equals(g)) {
-        //...
-     }
+    Memory
+    - float memory
+    - float frequency
 
      */
 
