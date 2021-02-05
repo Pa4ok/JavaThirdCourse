@@ -44,7 +44,7 @@ public class Main
 
     public static void main(String[] args)
     {
-        Student student1 = new Student(
+        /*Student student1 = new Student(
                 "petya",
                 3,
                 new int[] {
@@ -62,6 +62,20 @@ public class Main
         student2.getMarks()[2] = 5;
 
         System.out.println(student1);
-        System.out.println(student2);
+        System.out.println(student2);*/
+
+        Teacher teacher = new Teacher(
+                "jgrhgw",
+                "krefghorghf",
+                54,
+                new String[] {
+                        "55", "56", null
+                }
+        );
+
+        System.out.println(teacher.hasGroup("55"));
+        System.out.println(teacher.hasGroup("57"));
+        System.out.println(teacher.addGroup("oeghoiefg"));
+        System.out.println(teacher.addGroup("oeghoiefg"));
     }
 }
