@@ -1,4 +1,4 @@
-package ru.pa4ok.app;
+package ru.pa4ok.app.pc;
 
     /*
     ALT-INSERT - вызов меню генерации (можно через ПКМ)
@@ -15,35 +15,43 @@ import ru.pa4ok.app.pc.Memory;
 public class Main
 {
     /*
-    все поля приватные + геттеры и сеттеры + toString()
+    все поля приватные + геттеры и сеттеры (если поле не final) + toString()
 
     Computer
     - CPU cpu
     - GPU gpu
-    - Memory[] memoriesBlocks
+    - Memory[] memoriesBlocks //фиксированная длина 2
     public double getRating()
         должен расчитать рейтинг производительноти
         по формуле cpu.maxFrequency * 0.95 * cpu.cores + gpu.memory * 0.2 + 1 (если есть rtx)
     public Computer copy()
         должна скопировать объеът и все его вложенные объекты
+    public static Computer getFromKeyboard(Scanner scanner)
+        поочереди вызовет
+        CPU.getFromKeyboard(scanner)
+        GPU.getFromKeyboard(scanner)
+        Memory.getFromKeyboard(scanner)
 
     CPU //процессор
-    - String title
-    - int cores
+    - final String title
+    - final int cores
     - double minFrequency
     - double maxFrequency
     public CPU copy()
+    public static CPU getFromKeyboard(Scanner scanner)
 
     GPU //видеокарта
-    - String title
-    - double memory
-    - boolean rtx
+    - final String title
+    - final double memory
+    - final boolean rtx
     public GPU copy()
+    public static GPU getFromKeyboard(Scanner scanner)
 
     Memory
-    - double memory
+    - final double memory
     - double frequency
     public Memory copy()
+    public static Memory getFromKeyboard(Scanner scanner)
 
      */
 
