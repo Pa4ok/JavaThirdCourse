@@ -18,21 +18,25 @@ public class Main
     - String name
     - String subject
     - int exp //стаж
-    - String[] groups
+    - Group[] groups
     - 2 конструктрора
         1 принимает и инициализирует все переменные
         2 принимает и инициализирует все кроме массива
             +принимает длину массива и инициализирует его пустым
     - public boolean hasGroup(String g)
-        метод должен проверить если в массиве groups групп g
+        метод должен проверить если в массиве groups группа с названием g
     - public boolean removeGroup(String g)
         метод должен заменить группу с названием g в массиве groups на null
         если замена произошла вернуть true
         если такого элемента не было false
-    - public boolean addGroup(String g)
+    - public boolean addGroup(Group group)
         если в массиве groups есть null элемент
         он заменяется на g и возвращается true
         если такого нет возвращается false
+
+     Group
+     - String title
+     - int studentCount
 
 
      если groups[i] будет равен null - мы словим ошибку
