@@ -11,52 +11,51 @@ public class Main
     /*
     все поля приватные + геттеры и сеттеры + toString()
 
-    Computer
-    - CPU cpu
-    - GPU gpu
-    - Memory[] memoriesBlocks
-    public float getRating()
-        должен расчитать рейтинг производительноти
-        по формуле cpu.maxFrequency * 0.95 * cpu.cores + gpu.memory * 0.2 + 1 (если есть rtx)
+    Building
+    - String type
+    - Address address
+    - Apartment[] apartments
+    - public Building copy()
+    - public boolean hasApartmentOwner(int index)
+    - public String getApartmentOwner(int index)
+    - public void setApartmentOwner(int index, String newOwner)
 
-    CPU //процессор
-    - String title
-    - int cores //4, 8, 16
-    - float minFrequency //1.5, 2,6, 3,6
-    - float maxFrequency //2,6, 4,1, 5,0
+    Address
+    - String country
+    - String region
+    - String city
+    - String street
+    - String index
+    - public Address copy()
 
-    GPU //видеокарта
-    - String title
-    - float memory //2, 4, 6, 12, 16
-    - boolean rtx
-
-    Memory
-    - float memory //2, 4, 8, 16
-    - float frequency //2400, 2666
+    Apartment
+    - index
+    - String owner
+    - double square
+    - int rooms
+    - public Apartment copy()
 
      */
 
     public static void main(String[] args)
     {
+        CPU cpu = new CPU("i9900k", 8, 3.6F, 5.0F);
+        GPU gpu = new GPU("1080ti", 12, false);
+        Memory memory1 = new Memory(8, 2666);
+        Memory memory2 = new Memory(8, 2666);
+
         Computer pc1 = new Computer(
-                new CPU(
-                        "i9900k",
-                        8,
-                        3.6F,
-                        5.0F
-                ),
-                new GPU(
-                        "1080ti",
-                        12,
-                        false
-                ),
+                cpu,
+                gpu,
                 new Memory[] {
-                        new Memory(8, 2666),
-                        new Memory(8, 2666)
+                        memory1.copy(),
+                        memory2.copy()
                 }
         );
 
         System.out.println(pc1);
-        System.out.println(pc1.getRating());
+        cpu.setTitle("oiewhfowegfe");
+        memory1.setMemory(155555);
+        System.out.println(pc1);
     }
 }

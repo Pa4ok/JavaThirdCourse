@@ -14,6 +14,11 @@ public class CPU
         this.maxFrequency = maxFrequency;
     }
 
+    public CPU copy()
+    {
+        return new CPU(title, cores, minFrequency, maxFrequency);
+    }
+
     @Override
     public String toString() {
         return "CPU{" +

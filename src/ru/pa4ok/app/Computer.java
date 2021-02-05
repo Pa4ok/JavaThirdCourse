@@ -14,6 +14,17 @@ public class Computer
         this.memoriesBlocks = memoriesBlocks;
     }
 
+    public Computer copy()
+    {
+        Computer newPc = new Computer(cpu.copy(), gpu.copy(), new Memory[memoriesBlocks.length]);
+
+        for(int i=0; i<memoriesBlocks.length; i++) {
+            newPc.getMemoriesBlocks()[i] = memoriesBlocks[i].copy();
+        }
+
+        return newPc;
+    }
+
     public float getRating()
     {
         return cpu.getMaxFrequency() * 0.95F * cpu.getCores() +

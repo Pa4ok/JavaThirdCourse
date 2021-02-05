@@ -10,6 +10,11 @@ public class Memory
         this.frequency = frequency;
     }
 
+    public Memory copy()
+    {
+        return new Memory(memory, frequency);
+    }
+
     @Override
     public String toString() {
         return "Memory{" +

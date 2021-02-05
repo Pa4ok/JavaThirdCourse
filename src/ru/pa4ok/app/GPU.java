@@ -12,6 +12,11 @@ public class GPU
         this.rtx = rtx;
     }
 
+    public GPU copy()
+    {
+        return new GPU(title, memory, rtx);
+    }
+
     @Override
     public String toString() {
         return "GPU{" +
