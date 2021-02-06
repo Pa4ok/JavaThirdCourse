@@ -38,6 +38,8 @@ public class Main
 
         TestClass.testStaticMethod();*/
 
-        System.out.println(Math.sin(Math.PI / 2));
+        //System.out.println(Math.sin(Math.PI / 2));
+
+        System.out.println(MathUtils.calculateQuadraticEquation(new QuadraticEquation(1, -70, 600)));
     }
 }
