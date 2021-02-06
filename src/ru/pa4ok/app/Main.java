@@ -3,59 +3,41 @@ package ru.pa4ok.app;
 public class Main
 {
     /*
-        ALT-ENTER - автоматический импорт либо вывод контекстного меню устранения ошибки
-        ALT-INSERT - вызов меню генерации
+    ALT-ENTER - автоматический импорт либо вывод контекстного меню устранения ошибки
+    ALT-INSERT - вызов меню генерации
 
-     */
-
-    /*
     все поля приватные + геттеры и сеттеры + toString()
 
-    Building
-    - String type
-    - Address address
-    - Apartment[] apartments
-    - public Building copy()
-    - public boolean hasApartmentOwner(int index)
-    - public String getApartmentOwner(int index)
-    - public void setApartmentOwner(int index, String newOwner)
+    MathUtils
+    - public static QuadraticEquationRoot calculateQuadraticEquation(QuadraticEquation equation)
+        принимает объект который описывает коэфиценты кв. уравнения
+        возврщает объект описывающий его корни
+        если корней нет, то оставляет x1 и x2 нулями, а rootCount = 0
 
-    Address
-    - String country
-    - String region
-    - String city
-    - String street
-    - int buildingIndex
-    - public Address copy()
+    QuadraticEquation
+    - double a //коэфицент x^2
+    - double b //x^1
+    - double c
 
-    Apartment
-    - int index
-    - String owner
-    - double square
-    - int rooms
-    - public Apartment copy()
+    QuadraticEquationRoot // (2 корня x1 x2 2) (1 корень x1 0 1) (0 корней 0 0 0)
+    - double x1
+    - double x2
+    - int rootCount //количество корней, если 1 корень, то используется только x1
 
      */
 
     public static void main(String[] args)
     {
-        CPU cpu = new CPU("i9900k", 8, 3.6F, 5.0F);
-        GPU gpu = new GPU("1080ti", 12, false);
-        Memory memory1 = new Memory(8, 2666);
-        Memory memory2 = new Memory(8, 2666);
+        /*TestClass testClass = new TestClass();
+        System.out.println(testClass.testNonStatic);
 
-        Computer pc1 = new Computer(
-                cpu,
-                gpu,
-                new Memory[] {
-                        memory1.copy(),
-                        memory2.copy()
-                }
-        );
+        System.out.println(TestClass.staticString);*/
 
-        System.out.println(pc1);
-        cpu.setTitle("oiewhfowegfe");
-        memory1.setMemory(155555);
-        System.out.println(pc1);
+        /*TestClass testClass = new TestClass();
+        testClass.nonStaticMethod();
+
+        TestClass.testStaticMethod();*/
+
+        System.out.println(Math.sin(Math.PI / 2));
     }
 }
