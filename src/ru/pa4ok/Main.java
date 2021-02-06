@@ -36,12 +36,18 @@ public class Main
         TestClass.staticField = "new static value";
         System.out.println(TestClass.staticField);*/
 
-        System.out.println(Math.sin(Math.PI / 2));
+        /*System.out.println(Math.sin(Math.PI / 2));
 
         TestClass obj = new TestClass();
         TestClass obj1 = new TestClass();
         TestClass obj2 = new TestClass();
         TestClass obj3 = new TestClass();
-        TestClass obj4 = new TestClass();
+        TestClass obj4 = new TestClass();*/
+
+        System.out.println(
+                MathUtils.calculateQuadraticEquation(
+                        new QuadraticEquation(1, 4, -5)
+                )
+        );
     }
 }
