@@ -43,78 +43,32 @@ public class Main
 
      */
 
-    public static final boolean COMPILE_SOME_STUFF = false;
-
     public static void main(String[] args)
     {
-        System.out.println("mark1");
+        City city = new City(
+                "spb",
+                CityTypeEnum.TOWN,
+                60000000,
+                new Building[] {
+                        new Building(
+                                new Address(
+                                        "peso4naya",
+                                        14,
+                                        1
+                                ),
+                                BuildingTypeEnum.SOCIAL,
+                                3
+                        )
+                }
+        );
 
-        if(COMPILE_SOME_STUFF) {
-            System.out.println("mark2");
-        }
+        System.out.println(city);
 
-        System.out.println("mark3");
+        System.out.println(city.hasBuildingByAddress(new Address("peso4naya", 14, 1)));
+        System.out.println(city.getBuildingByAddress(new Address("peso4naya", 14, 1)));
+
+        System.out.println(city.hasBuildingByAddress(new Address("reghrhe", 14, 1)));
+        System.out.println(city.getBuildingByAddress(new Address("rherreg", 14, 1)));
+
     }
 }
-
-//final переменная должна быть объявлена обязательно
-
-//1 способ - сразу в поле класса
-class Test
-{
-    public final String test = "efihoef";
-
-    public void test()
-    {
-        //изменить после объявления нельзя
-        //test = "34324";
-    }
-}
-
-class Test2
-{
-    public final String test;
-
-    //2 способ - в конструкторе
-    public Test2(String test) {
-        this.test = test;
-    }
-}
-
-class Test3
-{
-    public final String test;
-    public int i;
-
-    public Test3(String test, int i) {
-        this.test = test;
-        this.i = i;
-    }
-
-    //final переменная должны быть реализована во всех возможных
-    //способах инициплизации объекта класса
-    public Test3(int i) {
-        this.i = i;
-        this.test = null;
-        //this(null, i);
-    }
-}
-
-class Test4
-{
-    //если переменная статичная также 2 варианта реализации
-    //сразу в поле
-    public static final String test = "43434343";
-}
-
-class Test5
-{
-    public static final String TEST_STRING;
-
-    //либо же в статик блоке
-    static {
-        TEST_STRING = "43434343";
-    }
-}
-
-
