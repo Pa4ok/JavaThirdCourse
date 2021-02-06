@@ -6,40 +6,115 @@ public class Main
     ALT-ENTER - автоматический импорт либо вывод контекстного меню устранения ошибки
     ALT-INSERT - вызов меню генерации
 
-    все поля приватные + геттеры и сеттеры + toString()
+    к enum'ам добавить всложенные переменные с переводом на русский (как в примере)
+    и переопредить у них toString() выводя туда русский перевод
 
-    MathUtils
-    - public static QuadraticEquationRoot calculateQuadraticEquation(QuadraticEquation equation)
-        принимает объект который описывает коэфиценты кв. уравнения
-        возврщает объект описывающий его корни
-        если корней нет, то оставляет x1 и x2 нулями, а rootCount = 0
+    City
+    - String title
+    - CityTypeEnum type
+    - int population
+    - Building[] buildings
+    - public boolean hasBuildingByAddress(Address address)
+        возврашает ниличие здание по адресу
+    - public Building getBuildingByAddress(Address address)
+        возврашает объект строения по адресу
+        если такого адреса нет - null
 
-    QuadraticEquation
-    - double a //коэфицент x^2
-    - double b //x^1
-    - double c
+    enum CityTypeEnum
+    - VILLAGE
+    - URBAN_VILLAGE
+    - TOWN
+    - METROPOLIS
 
-    QuadraticEquationRoot // (2 корня x1 x2 2) (1 корень x1 0 1) (0 корней 0 0 0)
-    - double x1
-    - double x2
-    - int rootCount //количество корней, если 1 корень, то используется только x1
+    Building
+    - Address address
+    - BuildingTypeEnum type
+    - int floorCount
+
+    enum BuildingTypeEnum
+    - SOCIAL
+    - LIVING
+    - INDUSTRIAL
+
+    Address
+    - String street
+    - int index //номер дома
+    - int subIndex //номер корпуса
 
      */
 
+    public static final boolean COMPILE_SOME_STUFF = false;
+
     public static void main(String[] args)
     {
-        /*TestClass testClass = new TestClass();
-        System.out.println(testClass.testNonStatic);
+        System.out.println("mark1");
 
-        System.out.println(TestClass.staticString);*/
+        if(COMPILE_SOME_STUFF) {
+            System.out.println("mark2");
+        }
 
-        /*TestClass testClass = new TestClass();
-        testClass.nonStaticMethod();
-
-        TestClass.testStaticMethod();*/
-
-        //System.out.println(Math.sin(Math.PI / 2));
-
-        System.out.println(MathUtils.calculateQuadraticEquation(new QuadraticEquation(1, -70, 600)));
+        System.out.println("mark3");
     }
 }
+
+//final переменная должна быть объявлена обязательно
+
+//1 способ - сразу в поле класса
+class Test
+{
+    public final String test = "efihoef";
+
+    public void test()
+    {
+        //изменить после объявления нельзя
+        //test = "34324";
+    }
+}
+
+class Test2
+{
+    public final String test;
+
+    //2 способ - в конструкторе
+    public Test2(String test) {
+        this.test = test;
+    }
+}
+
+class Test3
+{
+    public final String test;
+    public int i;
+
+    public Test3(String test, int i) {
+        this.test = test;
+        this.i = i;
+    }
+
+    //final переменная должны быть реализована во всех возможных
+    //способах инициплизации объекта класса
+    public Test3(int i) {
+        this.i = i;
+        this.test = null;
+        //this(null, i);
+    }
+}
+
+class Test4
+{
+    //если переменная статичная также 2 варианта реализации
+    //сразу в поле
+    public static final String test = "43434343";
+}
+
+class Test5
+{
+    public static final String TEST_STRING;
+
+    //либо же в статик блоке
+    static {
+        TEST_STRING = "43434343";
+    }
+}
+
+
