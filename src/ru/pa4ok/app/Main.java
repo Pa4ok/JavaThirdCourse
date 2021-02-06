@@ -25,11 +25,11 @@ public class Main
     - String region
     - String city
     - String street
-    - String index
+    - int buildingIndex
     - public Address copy()
 
     Apartment
-    - index
+    - int index
     - String owner
     - double square
     - int rooms
