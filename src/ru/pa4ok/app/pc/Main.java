@@ -17,7 +17,6 @@ import java.util.Scanner;
 public class Main
 {
     /*
-    все поля приватные + геттеры и сеттеры (если поле не final) + toString()
 
     Computer
     - CPU cpu
@@ -34,7 +33,7 @@ public class Main
         GPU.getFromKeyboard(scanner)
         Memory.getFromKeyboard(scanner)
 
-    CPU //процессор
+    enum CPU //пару процессоров закиньте как константы enum
     - final String title
     - final int cores
     - double minFrequency
@@ -42,14 +41,14 @@ public class Main
     public CPU copy()
     public static CPU getFromKeyboard(Scanner scanner)
 
-    GPU //видеокарта
+    enum GPU //пару видеокарт закиньте как константы enum
     - final String title
     - final double memory
     - final boolean rtx
     public GPU copy()
     public static GPU getFromKeyboard(Scanner scanner)
 
-    Memory
+    enum Memory //пару плашек оперативной памятиы закиньте как константы enum
     - final double memory
     - double frequency
     public Memory copy()
