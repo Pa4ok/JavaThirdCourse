@@ -1,8 +1,10 @@
 package ru.pa4ok.app.pc;
 
+import java.util.Scanner;
+
 public class Memory
 {
-    private double memory;
+    private final double memory;
     private double frequency;
 
     public Memory(double memory, double frequency) {
@@ -12,6 +14,17 @@ public class Memory
 
     public Memory copy()
     {
+        return new Memory(memory, frequency);
+    }
+
+    public static Memory getFromKeyboard(Scanner scanner)
+    {
+        System.out.print("Введите количество оперативной памяти: ");
+        double memory = Double.parseDouble(scanner.nextLine());
+
+        System.out.print("Введите частота оперативной памяти: ");
+        double frequency = Double.parseDouble(scanner.nextLine());
+
         return new Memory(memory, frequency);
     }
 
@@ -25,10 +38,6 @@ public class Memory
 
     public double getMemory() {
         return memory;
-    }
-
-    public void setMemory(double memory) {
-        this.memory = memory;
     }
 
     public double getFrequency() {

@@ -12,6 +12,8 @@ import ru.pa4ok.app.pc.Computer;
 import ru.pa4ok.app.pc.GPU;
 import ru.pa4ok.app.pc.Memory;
 
+import java.util.Scanner;
+
 public class Main
 {
     /*
@@ -57,7 +59,7 @@ public class Main
 
     public static void main(String[] args)
     {
-        CPU cpu = new CPU("i9900k", 8, 3.6, 5.0);
+        /*CPU cpu = new CPU("i9900k", 8, 3.6, 5.0);
         GPU gpu = new GPU("1080ti", 12, false);
         Memory[] memories = {
                 new Memory(8, 2666),
@@ -72,6 +74,10 @@ public class Main
         pc1.getMemoriesBlocks()[0].setMemory(16);
 
         System.out.println(pc1);
-        System.out.println(pc2);
+        System.out.println(pc2);*/
+
+        Computer pc = Computer.getFromKeyboard(new Scanner(System.in));
+        System.out.println();
+        System.out.println(pc);
     }
 }

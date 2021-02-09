@@ -1,6 +1,7 @@
 package ru.pa4ok.app.pc;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Computer
 {
@@ -32,6 +33,15 @@ public class Computer
         }
 
         return newPc;
+    }
+
+    public static Computer getFromKeyboard(Scanner scanner)
+    {
+        CPU cpu = CPU.getFromKeyBoard(scanner);
+        GPU gpu = GPU.getFromKeyBoard(scanner);
+        Memory memory = Memory.getFromKeyboard(scanner);
+
+        return new Computer(cpu, gpu, new Memory[] { memory });
     }
 
     @Override

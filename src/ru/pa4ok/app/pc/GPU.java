@@ -1,10 +1,12 @@
 package ru.pa4ok.app.pc;
 
+import java.util.Scanner;
+
 public class GPU
 {
-    private String title;
-    private double memory;
-    private boolean rtx;
+    private final String title;
+    private final double memory;
+    private final boolean rtx;
 
     public GPU(String title, double memory, boolean rtx) {
         this.title = title;
@@ -14,6 +16,20 @@ public class GPU
 
     public GPU copy()
     {
+        return new GPU(title, memory, rtx);
+    }
+
+    public static GPU getFromKeyBoard(Scanner scanner)
+    {
+        System.out.print("Введите название видеркарты: ");
+        String title = scanner.nextLine();
+
+        System.out.print("Введите количество видеопамяти: ");
+        double memory = Double.parseDouble(scanner.nextLine());
+
+        System.out.print("Введите есть ли rtx: ");
+        boolean rtx = Boolean.parseBoolean(scanner.nextLine());
+
         return new GPU(title, memory, rtx);
     }
 
@@ -30,23 +46,11 @@ public class GPU
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public double getMemory() {
         return memory;
     }
 
-    public void setMemory(double memory) {
-        this.memory = memory;
-    }
-
     public boolean isRtx() {
         return rtx;
-    }
-
-    public void setRtx(boolean rtx) {
-        this.rtx = rtx;
     }
 }

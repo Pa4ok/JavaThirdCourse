@@ -1,9 +1,11 @@
 package ru.pa4ok.app.pc;
 
+import java.util.Scanner;
+
 public class CPU
 {
-    private String title;
-    private int cores;
+    private final String title;
+    private final int cores;
     private double minFrequency;
     private double maxFrequency;
 
@@ -16,6 +18,23 @@ public class CPU
 
     public CPU copy()
     {
+        return new CPU(title, cores, minFrequency, maxFrequency);
+    }
+
+    public static CPU getFromKeyBoard(Scanner scanner)
+    {
+        System.out.print("Введите название процессора: ");
+        String title = scanner.nextLine();
+
+        System.out.print("Введите количество ядер: ");
+        int cores = Integer.parseInt(scanner.nextLine());
+
+        System.out.print("Введите минимальную частотму: ");
+        double minFrequency = Double.parseDouble(scanner.nextLine());
+
+        System.out.print("Введите максимальную частоту: ");
+        double maxFrequency = Double.parseDouble(scanner.nextLine());
+
         return new CPU(title, cores, minFrequency, maxFrequency);
     }
 
@@ -33,16 +52,8 @@ public class CPU
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public int getCores() {
         return cores;
-    }
-
-    public void setCores(int cores) {
-        this.cores = cores;
     }
 
     public double getMinFrequency() {
