@@ -3,37 +3,92 @@ package ru.pa4ok;
 public class Main
 {
     /*
-    Book
-    - static int idCounter = 1
-    - int id
-    - String title
-    - String author
-    - int pages
-    - констуктор книги
-        приминимает title, author, pages
-        в id записывает idCounter и инкрементирует idCounter
 
-    Library
-    - String title
-    - Book[] books
-    - public boolean addBook(Book book)
-        проверяет есть ли в books книга с таким же id
-        если такая книга есть - присваевает ей новый id через Book.idCounter
-        после чего пытается поставить книгу на место первого null элемента
+    все поля protected + геттеры и сеттеры + toString()
 
-        если получилось найти и поставить книгу вместо null элемента вернуть true
-        иначе вернуть false
+    Human
+    - String firstname;
+    - String surname;
+    - String patronymic;
+    - int age;
+
+    Teacher extends Human
+    - String subject
+    - int exp
+
+    Student extends Human
+    - int level
+
+    Building
+    - String address
+    - int floorCount
+
+    School extends Building
+    - int index
+    - String title
+    - Teacher[] teachers
+    - Student[] students
+    - public boolean addEntity(Human human)
+            если класс объекта human принадлежит классу Teacher
+            то нужно добавить его на пустое месте в массиве teachers
+            если класс объекта human принадлежит классу Student
+            то нужно добавить его на пустое месте в массиве students
+            если и не то и не то - вывести в консоль аля not a school entity + human
+
+
 
      */
 
     public static void main(String[] args)
     {
-        Library library = new Library("fiwqhfw", 3);
-        System.out.println(library);
-        System.out.println(library.addBook(new Book("one", "one", 22)));
-        System.out.println(library.addBook(new Book("two", "one", 22)));
-        System.out.println(library.addBook(new Book(2, "two", "one", 22)));
-        System.out.println(library.addBook(new Book("two", "one", 22)));
-        System.out.println(library);
+        Student student = new Student("a", "b", "c", 15, 3);
+        System.out.println(student);
+
+        Teacher teacher = new Teacher("d", "e", "f", 30, "pp", 5);
+        System.out.println(teacher);
+
+        Human human = new Student("fe", "refew", "fewefgr", 20, 5);
+        System.out.println(human);
+
+        Human human1 = new Teacher("dfwef", "efwwfe", "ffwef", 30, "pp", 5);
+        System.out.println(human);
+
+
+        System.out.println();
+
+        /*nextIncrementAge(student);
+        nextIncrementAge(teacher);
+        nextIncrementAge(human);
+        System.out.println(student);
+        System.out.println(teacher);
+        System.out.println(human);*/
+
+        /*nextStudentLevel(student);
+        System.out.println(student);
+
+        if(human instanceof Student) {
+            Student s = (Student)human;
+            nextStudentLevel(s);
+            System.out.println(human);
+        }
+
+        if(human1 instanceof Student) {
+            Student s = (Student)human1;
+            nextStudentLevel(s);
+            System.out.println(human1);
+        }*/
+
+        //teacher.test();
+        student.test();
+    }
+
+    public static void nextIncrementAge(Human human)
+    {
+        human.age++;
+    }
+
+    public static void nextStudentLevel(Student student)
+    {
+        student.level++;
     }
 }
