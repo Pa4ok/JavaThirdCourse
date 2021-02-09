@@ -13,13 +13,16 @@ public class Main
     - String surname;
     - String patronymic;
     - int age;
+    - public void nextYear() //age++
 
     Teacher extends Human
     - String subject
     - int exp
+    - public void nextYear() //вызывать родительскую реализацию и exp++
 
     Student extends Human
     - int level
+    - public void nextYear() //вызывать родительскую реализацию и level++
 
     Building
     - String address
@@ -37,6 +40,13 @@ public class Main
             то нужно добавить его на пустое месте в массиве students и вернуть true
             если и не то и не то - вывести в консоль аля not a school entity + human
             если пустого места нет или у нас "not a school entity" то вернуть false
+    - public int nextYearAll()
+        перебирает всех студентов и преподавателей и вызывает у них nextYear()
+        если после вызова метода у стундента курс > 5, то его нужно заменить на null
+        и вывести информацию о том, что он закончил вуз
+        если после вызова метода у преподавателя возраст > 65, то его нужно заменить на null
+        и вывести информацию о том, что он вышел на пенсию
+        возвращаемым значением функции будет количество ушедших людей из школы
 
 
 
