@@ -28,10 +28,7 @@ public class Main
     public Computer copy()
         должна скопировать объеът и все его вложенные объекты
     public static Computer getFromKeyboard(Scanner scanner)
-        поочереди вызовет
-        CPU.getFromKeyboard(scanner)
-        GPU.getFromKeyboard(scanner)
-        Memory.getFromKeyboard(scanner)
+        по очереди вызывает вызыывает аналогичный метод для вложенных объектов
 
     enum CPU //пару процессоров закиньте как константы enum
     - final String title
@@ -40,6 +37,7 @@ public class Main
     - double maxFrequency
     public CPU copy()
     public static CPU getFromKeyboard(Scanner scanner)
+        запрашивает текстовое значение enum'a и пытается его отпарсить
 
     enum GPU //пару видеокарт закиньте как константы enum
     - final String title
@@ -47,12 +45,14 @@ public class Main
     - final boolean rtx
     public GPU copy()
     public static GPU getFromKeyboard(Scanner scanner)
+        запрашивает текстовое значение enum'a и пытается его отпарсить
 
     enum Memory //пару плашек оперативной памятиы закиньте как константы enum
     - final double memory
     - double frequency
     public Memory copy()
     public static Memory getFromKeyboard(Scanner scanner)
+        запрашивает текстовое значение enum'a и пытается его отпарсить
 
      */
 
