@@ -50,6 +50,39 @@ public class School extends Building
         return false;
     }
 
+    public int nextYearAll()
+    {
+        int k = 0;
+
+        for(int i=0; i<teachers.length; i++)
+        {
+            if(teachers[i] != null)
+            {
+                teachers[i].nextYear();
+                if(teachers[i].getAge() > 65) {
+                    System.out.println(teachers[i] + " ушел на пенсию");
+                    teachers[i] = null;
+                    k++;
+                }
+            }
+        }
+
+        for(int i=0; i< students.length; i++)
+        {
+            if(students[i] != null)
+            {
+                students[i].nextYear();
+                if(students[i].getLevel() > 5) {
+                    System.out.println(students[i] + " выпустился в армию");
+                    students[i] = null;
+                    k++;
+                }
+            }
+        }
+
+        return k;
+    }
+
     @Override
     public String toString() {
         return "School{" +

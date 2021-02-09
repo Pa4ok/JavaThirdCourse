@@ -1,7 +1,5 @@
 package ru.pa4ok;
 
-import java.nio.file.Paths;
-
 public class Teacher extends Human
 {
     protected String subject;
@@ -15,9 +13,10 @@ public class Teacher extends Human
     }
 
     @Override
-    public void test()
+    public void nextYear()
     {
-        System.out.println("test from teacher");
+        super.nextYear();
+        this.exp++;
     }
 
     @Override

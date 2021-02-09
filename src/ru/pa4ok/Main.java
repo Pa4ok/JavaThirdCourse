@@ -54,57 +54,23 @@ public class Main
 
     public static void main(String[] args)
     {
-        Student student = new Student("a", "b", "c", 15, 3);
-        //System.out.println(student);
-
-        Teacher teacher = new Teacher("d", "e", "f", 30, "pp", 5);
-        //System.out.println(teacher);
-
-        /*Human human = new Student("fe", "refew", "fewefgr", 20, 5);
-        System.out.println(human);
-
-        Human human1 = new Teacher("dfwef", "efwwfe", "ffwef", 30, "pp", 5);
-        System.out.println(human);*/
-
-        Human human = new Human("fe", "refew", "fewefgr", 20);
-        //System.out.println();
-
-        /*nextIncrementAge(student);
-        nextIncrementAge(teacher);
-        nextIncrementAge(human);
-        System.out.println(student);
-        System.out.println(teacher);
-        System.out.println(human);*/
-
-        /*nextStudentLevel(student);
-        System.out.println(student);
-
-        if(human instanceof Student) {
-            Student s = (Student)human;
-            nextStudentLevel(s);
-            System.out.println(human);
-        }
-
-        if(human1 instanceof Student) {
-            Student s = (Student)human1;
-            nextStudentLevel(s);
-            System.out.println(human1);
-        }*/
-
-        //teacher.test();
-        //student.test();
-
         School school = new School(
-                "spb", 5,
-                34, "34 gimnaziya", 3, 3
+                "spb",
+                5,
+                344,
+                "top school",
+                new Teacher[] {
+                    new Teacher("a", "b", "c", 64, "pp", 30)
+                },
+                new Student[] {
+                    new Student("grg", "grgr", "fgrfre", 23, 5)
+                }
         );
+
         System.out.println(school);
-
-        System.out.println(school.addEntity(teacher));
-        System.out.println(school.addEntity(student));
-        System.out.println(school.addEntity(human));
-
-        System.out.println();
+        System.out.println(school.nextYearAll());
+        System.out.println(school);
+        System.out.println(school.nextYearAll());
         System.out.println(school);
     }
 

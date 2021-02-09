@@ -11,17 +11,10 @@ public class Student extends Human
     }
 
     @Override
-    public void test()
+    public void nextYear()
     {
-        super.test();
-        System.out.println("test from student");
-    }
-
-    @Override
-    public boolean testBoolean()
-    {
-        boolean parentResult = super.testBoolean();
-        return true;
+        super.nextYear();
+        this.level++;
     }
 
     @Override

@@ -16,14 +16,9 @@ public class Human
         this.age = age;
     }
 
-    public void test()
+    public void nextYear()
     {
-        System.out.println("test from hunan");
-    }
-
-    public boolean testBoolean()
-    {
-        return new Random().nextBoolean();
+        this.age++;
     }
 
     @Override
