@@ -2,6 +2,8 @@ package ru.pa4ok.app;
 
 public class Human
 {
+    private static int idCounter;
+    private final int id;
     protected String firstname;
     protected String surname;
     protected String patronymic;
@@ -9,6 +11,7 @@ public class Human
     protected int age;
 
     public Human(String firstname, String surname, String patronymic, GenderEnum gender, int age) {
+        this.id = ++idCounter;
         this.firstname = firstname;
         this.surname = surname;
         this.patronymic = patronymic;
