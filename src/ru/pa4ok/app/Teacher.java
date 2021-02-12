@@ -5,11 +5,18 @@ public class Teacher extends Human
     private String subject;
     private int exp;
 
-    public Teacher(String firstname, String surname, String patronymic, int age, String subject, int exp)
+    public Teacher(String firstname, String surname, String patronymic, GenderEnum gender, int age, String subject, int exp)
     {
-        super(firstname, surname, patronymic, age);
+        super(firstname, surname, patronymic, gender, age);
         this.subject = subject;
         this.exp = exp;
+    }
+
+    @Override
+    public void nextYear()
+    {
+        super.nextYear();
+        this.exp++;
     }
 
     @Override
@@ -18,6 +25,7 @@ public class Teacher extends Human
                 "firstname='" + firstname + '\'' +
                 ", surname='" + surname + '\'' +
                 ", patronymic='" + patronymic + '\'' +
+                ", gender=" + gender +
                 ", age=" + age +
                 ", subject='" + subject + '\'' +
                 ", exp=" + exp +
