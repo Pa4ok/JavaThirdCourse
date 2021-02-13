@@ -1,4 +1,4 @@
-package ru.pa4ok;
+package ru.pa4ok.school;
 
 public class Main
 {
