@@ -4,9 +4,16 @@ public class Student extends Human
 {
     private int level;
 
-    public Student(String firstname, String surname, String patronymic, int age, int level) {
-        super(firstname, surname, patronymic, age);
+    public Student(String firstname, String surname, String patronymic, GenderEnum gender, int age, int level) {
+        super(firstname, surname, patronymic, gender, age);
         this.level = level;
+    }
+
+    @Override
+    public void nextYear()
+    {
+        super.nextYear();
+        this.level++;
     }
 
     @Override
@@ -15,6 +22,7 @@ public class Student extends Human
                 "firstname='" + firstname + '\'' +
                 ", surname='" + surname + '\'' +
                 ", patronymic='" + patronymic + '\'' +
+                ", gender=" + gender +
                 ", age=" + age +
                 ", level=" + level +
                 '}';

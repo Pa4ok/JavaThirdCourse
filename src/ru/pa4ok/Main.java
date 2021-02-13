@@ -55,48 +55,24 @@ public class Main
 
     public static void main(String[] args)
     {
-        /*Human human = new Human("a", "b", "c", 15);
-        Teacher teacher = new Teacher("a1", "b1", "c1", 55, "irkeghoruiegh", 20);
+        School school = new School(
+                "spb",
+                5,
+                33,
+                "reolgregjre",
+                new Teacher[] {
+                        new Teacher("a", "b", "c", GenderEnum.FEMALE, 64, "reegrg", 20),
+                        null
+                },
+                new Student[] {
+                        new Student("gh", "f", "l", GenderEnum.MALE, 23, 5)
+                }
+        );
 
-        System.out.println(human);
-        System.out.println(teacher);
-
-        System.out.println();
-
-        human.test();
-        System.out.println("===================");
-        teacher.test();*/
-
-        /*Human human = new Human("a", "b", "c", 15);
-        Human teacher = new Teacher("a1", "b1", "c1", 55, "irkeghoruiegh", 20);
-
-        System.out.println(human);
-        System.out.println(teacher);
-
-        incrementAge(human);
-        incrementAge(teacher);
-        System.out.println();
-
-        System.out.println(human);
-        System.out.println(teacher);*/
-
-        //instanceof проверяет класс объекта на принадлежность к другому классу
-        /*System.out.println(human instanceof Teacher);
-        System.out.println(human instanceof Student);
-        System.out.println(human instanceof Human);
-
-        System.out.println();
-
-        System.out.println(teacher instanceof Teacher);
-        System.out.println(teacher instanceof Student);
-        System.out.println(teacher instanceof Human);*/
-
-        Human h = new Teacher("a1", "b1", "c1", 55, "irkeghoruiegh", 20);
-        if(h instanceof Teacher) {
-            //приведение типов "от меньшего к большему возможно только после проверки"
-            Teacher teacher = (Teacher) h;
-        }
-
+        System.out.println(school);
+        System.out.println(school.nextYearAll());
+        System.out.println(school.nextYearAll());
+        System.out.println(school);
     }
 
     public static void incrementAge(Human human)
