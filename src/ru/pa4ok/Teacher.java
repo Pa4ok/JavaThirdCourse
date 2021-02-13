@@ -15,24 +15,6 @@ public class Teacher extends Human
     }
 
     @Override
-    public void test()
-    {
-        //вызов родительской реализации функции
-        super.test();
-        System.out.println("test from teacher");
-    }
-
-    @Override
-    public int testInt()
-    {
-        int parent = super.testInt();
-        if(parent > 10) {
-            parent = 10;
-        }
-        return parent;
-    }
-
-    @Override
     public String toString() {
         return "Teacher{" +
                 "firstname='" + firstname + '\'' +

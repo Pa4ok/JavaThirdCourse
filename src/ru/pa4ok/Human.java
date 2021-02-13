@@ -14,16 +14,6 @@ public class Human
         this.age = age;
     }
 
-    public void test()
-    {
-        System.out.println("test from human");
-    }
-
-    public int testInt()
-    {
-        return 5;
-    }
-
     @Override
     public String toString() {
         return "Human{" +

@@ -37,7 +37,7 @@ public class Main
             если и не то и не то - вывести в консоль аля not a school entity + human
             если пустого места нет или у нас "not a school entity" то вернуть false
      */
-    
+
     public static void main(String[] args)
     {
         /*Human human = new Human("a", "b", "c", 15);
