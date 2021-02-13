@@ -32,6 +32,14 @@ public class NewMain
 
     public static void main(String[] args)
     {
+        Triangle triangle = new Triangle(
+                "треугоауц",
+                new Point2D(-3, 0),
+                new Point2D(0, 4),
+                new Point2D(3, 0)
+        );
+
+        System.out.println(triangle.getSquare());
 
     }
 }
