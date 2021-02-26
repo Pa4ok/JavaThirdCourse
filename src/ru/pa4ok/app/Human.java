@@ -5,13 +5,20 @@ public class Human
     protected String firstname;
     protected String surname;
     protected String patronymic;
+    protected GenderEnum gender;
     protected int age;
 
-    public Human(String firstname, String surname, String patronymic, int age) {
+    public Human(String firstname, String surname, String patronymic, GenderEnum gender, int age) {
         this.firstname = firstname;
         this.surname = surname;
         this.patronymic = patronymic;
+        this.gender = gender;
         this.age = age;
+    }
+
+    public void nextYear()
+    {
+        this.age++;
     }
 
     @Override
@@ -20,6 +27,7 @@ public class Human
                 "firstname='" + firstname + '\'' +
                 ", surname='" + surname + '\'' +
                 ", patronymic='" + patronymic + '\'' +
+                ", gender=" + gender +
                 ", age=" + age +
                 '}';
     }
@@ -54,5 +62,13 @@ public class Human
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public GenderEnum getGender() {
+        return gender;
+    }
+
+    public void setGender(GenderEnum gender) {
+        this.gender = gender;
     }
 }
