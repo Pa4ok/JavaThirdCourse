@@ -1,7 +1,5 @@
 package ru.pa4ok.app;
 
-import java.util.Random;
-
 public class Human
 {
     protected String firstname;
@@ -14,16 +12,6 @@ public class Human
         this.surname = surname;
         this.patronymic = patronymic;
         this.age = age;
-    }
-
-    public void test()
-    {
-        System.out.println("test from human");
-    }
-
-    public int testInt()
-    {
-        return 5;
     }
 
     @Override

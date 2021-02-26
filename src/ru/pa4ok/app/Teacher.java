@@ -14,26 +14,6 @@ public class Teacher extends Human
     }
 
     @Override
-    public void test()
-    {
-        super.test();
-        System.out.println("test from teacher");
-    }
-
-    @Override
-    public int testInt() {
-        int a = super.testInt();
-        a *= 5;
-        a += 44;
-        return a;
-    }
-
-    public void testTeacher()
-    {
-        System.out.println("erwghwie2fghoewf");
-    }
-
-    @Override
     public String toString() {
         return "Teacher{" +
                 "firstname='" + firstname + '\'' +
