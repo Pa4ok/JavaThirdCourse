@@ -28,6 +28,23 @@ public class Main
 
     public static void main(String[] args)
     {
+        LinkedEntity entity = new LinkedEntity();
+        /*entity.add(new LinkedEntity());
+        entity.add(new LinkedEntity());
+        entity.add(new LinkedEntity());
+        entity.add(new LinkedEntity());
+
+        System.out.println(entity);
+        System.out.println(entity.size());
+        System.out.println(entity.contains(10));
+        System.out.println(entity.contains(3));
+        System.out.println(entity.delete(2));
+        System.out.println(entity);*/
+
+        for(int i=0; i<100000; i++) {
+            System.out.println(i);
+            entity.add(new LinkedEntity());
+        }
 
     }
 }
