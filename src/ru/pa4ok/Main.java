@@ -2,30 +2,32 @@ package ru.pa4ok;
 
 public class Main
 {
+    /*
+    class LinkedEntity
+    - private static int idCounter = 0;
+
+    - final int id = ++idCounter;
+    - LinkedEntity child
+
+    - public void add(LinkedEntity entity)
+            дойти до такого child элемента
+            у которого его child будет null
+            и поставить entity на его место
+    - public boolean delete(int id)
+            дойти до такого child элемента
+            у которого будет нужный id
+            и удалить его, но при этом поставить на его место
+            его child объет
+    - public boolean contains(int id)
+            проверка на то есть ли такой объект в списке
+    - public int size()
+            итоговое количество объетов
+
+    задача реализовать свой связанный список
+     */
+
     public static void main(String[] args)
     {
-        Builder builder = new Builder("вася");
-        System.out.println(builder.getRandInt());
-    }
 
-    //все те же правила наследования работают и для интрефейсов
-    //мы можем проверять на принадлежность
-    //можем делать приведение типов
-    public static void test(Object o)
-    {
-        if(o instanceof IWorker) {
-            ((IWorker)o).work();
-        }
-
-        if(o instanceof ISleeper) {
-            ISleeper sleeper = (ISleeper)o;
-            sleeper.sleep();
-        }
-
-        if(o instanceof Builder) {
-            Builder builder = (Builder) o;
-            builder.work();
-            builder.sleep();
-        }
     }
 }
