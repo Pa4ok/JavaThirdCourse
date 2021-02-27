@@ -37,6 +37,26 @@ public class Task
 
     public static void main(String[] args)
     {
+        Zoo zoo = new Zoo(
+                "Zoo",
+                new EntityLiving[] {
+                        new Wolf(),
+                        new Ant(),
+                        new Ant(),
+                        new Ant(),
+                        new Wolf(),
+                        new Pigeon(),
+                        new Pigeon(),
+                        new Ant()
+                }
+        );
 
+        System.out.println(zoo);
+        System.out.println(zoo.getSoundEntityCount());
+        System.out.println(zoo.getFlyEntityCount());
+        System.out.println(zoo.getPredatorEntityCount());
+        zoo.feedPredators(new Pigeon());
+        zoo.feedPredators(new Ant());
+        zoo.feedPredators(new Wolf());
     }
 }
