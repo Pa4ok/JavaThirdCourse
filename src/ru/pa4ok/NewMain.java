@@ -1,5 +1,7 @@
 package ru.pa4ok;
 
+import ru.pa4ok.task.*;
+
 public class NewMain
 {
     /*
@@ -38,10 +40,30 @@ public class NewMain
 
     public static void main(String[] args)
     {
-        Miner miner = new Miner("vasya");
+        /*Miner miner = new Miner("vasya");
         //test(miner);
         miner.work();
-        miner.eat();
+        miner.eat();*/
+
+        Zoo zoo = new Zoo(
+                "Zoo",
+                new EntityLiving[] {
+                        new Pigeon(),
+                        new Pigeon(),
+                        new Pigeon(),
+                        new Tiger(),
+                        new Ant(),
+                        new Ant(),
+                        new Tiger()
+                }
+        );
+
+        System.out.println(zoo.getPredatorEntityCount());
+        System.out.println(zoo.getFlyEntityCount());
+        System.out.println(zoo.getSoundEntityCount());
+        zoo.feedPredators(new Pigeon());
+        zoo.feedPredators(new Ant());
+        zoo.feedPredators(new Tiger());
     }
 
     //все правила проверок на принадлежность к типу данных работают также
