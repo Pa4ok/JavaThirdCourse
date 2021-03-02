@@ -26,7 +26,23 @@ public class Main
      */
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
+        LinkedEntity entity = new LinkedEntity();
+        /*for(int i=0; i<10000; i++) {
+            entity.add(new LinkedEntity());
+        }
+        long nanoTime = System.nanoTime();
+        System.out.println(entity.size_B());
+        System.out.println((System.nanoTime() - nanoTime) + "ns");*/
+
+        for(int i=0; i<8; i++) {
+            entity.add(new LinkedEntity());
+        }
+
+        System.out.println(entity.contains(5));
+        System.out.println(entity.contains(4));
+        System.out.println(entity.contains(20));
 
     }
 }
