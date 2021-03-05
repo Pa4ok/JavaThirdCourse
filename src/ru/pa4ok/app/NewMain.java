@@ -39,16 +39,4 @@ public class NewMain
     {
 
     }
-
-    public static void test(Object o)
-    {
-        //на интрефейсы распространяются остальные правила наследования
-        if(o instanceof IWorker)
-        {
-            IWorker worker = (IWorker) o;
-            worker.work();
-
-            ((IWorker)o).work();
-        }
-    }
 }
