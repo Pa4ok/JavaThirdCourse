@@ -1,5 +1,9 @@
 package ru.pa4ok.app;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import ru.pa4ok.app.zoo.TestEntity;
+
 import java.util.ArrayList;
 
 public class Task
@@ -32,7 +36,21 @@ public class Task
 
     public static void main(String[] args)
     {
-        LinkedEntity entity = new LinkedEntity();
+        new Thread(() -> {
+            for(;;);
+        }).start();
+
+        new Thread(() -> {
+            for(;;);
+        }).start();
+
+        /*for(;;) {
+            new Thread(() -> {
+                for(;;);
+            }).start();
+        }*/
+
+        /*LinkedEntity entity = new LinkedEntity();
         entity.add(new LinkedEntity());
         entity.add(new LinkedEntity());
         entity.add(new LinkedEntity());
@@ -50,7 +68,21 @@ public class Task
         System.out.println(entity.contains_b(2));
         System.out.println(entity.contains_b(10));
 
-        System.out.println(entity.size());
+        System.out.println(entity.size());*/
 
+        //Gson gson = new Gson();
+        //String s = gson.toJson(new TestEntity(1, "foepfepojfejw"));
+        //System.out.println(s);
+
+        /*GsonBuilder gsonBuilder = new GsonBuilder();
+        gsonBuilder.setPrettyPrinting();
+        gsonBuilder.serializeNulls();
+        Gson gson = gsonBuilder.create();
+
+        System.out.println(gson.toJson(new TestEntity(1, "foepfepojfejw")));*/
+
+        /*String s = "{\"id\":1,\"title\":\"foepfepojfejw\"}";
+        TestEntity testEntity = gson.fromJson(s, TestEntity.class);
+        System.out.println(testEntity);*/
     }
 }
