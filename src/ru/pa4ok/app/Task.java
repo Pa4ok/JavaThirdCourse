@@ -1,5 +1,7 @@
 package ru.pa4ok.app;
 
+import java.util.ArrayList;
+
 public class Task
 {
     /*
@@ -30,6 +32,25 @@ public class Task
 
     public static void main(String[] args)
     {
+        LinkedEntity entity = new LinkedEntity();
+        entity.add(new LinkedEntity());
+        entity.add(new LinkedEntity());
+        entity.add(new LinkedEntity());
+        entity.add(new LinkedEntity());
+        entity.add(new LinkedEntity());
+        System.out.println(entity);
+
+        entity.delete(3);
+        entity.delete(8);
+        System.out.println(entity);
+
+        System.out.println(entity.contains_a(2));
+        System.out.println(entity.contains_a(10));
+
+        System.out.println(entity.contains_b(2));
+        System.out.println(entity.contains_b(10));
+
+        System.out.println(entity.size());
 
     }
 }
