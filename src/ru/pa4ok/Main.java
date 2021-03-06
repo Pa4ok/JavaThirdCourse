@@ -41,7 +41,7 @@ public class Main
         set.add("abcggrgre");
         System.out.println(set);*/
 
-        TestClass t1 = new TestClass();
+        /*TestClass t1 = new TestClass();
         TestClass t2 = new TestClass();
         TestClass t3 = new TestClass();
         TestClass t4 = new TestClass();
@@ -52,7 +52,7 @@ public class Main
         map.put(t2.uuid, t2);
         map.put(t3.uuid, t3);
         map.put(t4.uuid, t4);
-        map.put(t5.uuid, t5);
+        map.put(t5.uuid, t5);*/
         //System.out.println(map);
 
         /*String key = t3.uuid;
@@ -71,7 +71,7 @@ public class Main
         //map.isEmpty();
 
         //перебор связок ключ-значение
-        for(Map.Entry<String, TestClass> mapEntry : map.entrySet()) {
+        /*for(Map.Entry<String, TestClass> mapEntry : map.entrySet()) {
             System.out.println(mapEntry.getKey() + " | " + mapEntry.getValue());
         }
 
@@ -85,7 +85,28 @@ public class Main
 
         //получение всех объектов
         List<TestClass> list = new ArrayList<>(map.values());
-        System.out.println(list);
+        System.out.println(list);*/
+
+        Library lib = new Library("greegrgge", "gre[ogrgerg");
+        lib.addBook(new Book("1b", "fferfefe", 44));
+        lib.addBook(new Book("2b", "fferfefe", 33));
+        lib.addBook(new Book("2b", "fferfefe", 33));
+        lib.addBook(new Book("3b", "fferfefe", 55));
+        lib.addBook(new Book("4b", "fferfefe", 354));
+        lib.addBook(new Book("4b", "fferfefe", 354));
+        lib.addBook(new Book("4b", "fferfefe", 354));
+        System.out.println(lib);
+        System.out.println();
+        System.out.println(lib.getBook("1b"));
+        System.out.println(lib.getBook("2b"));
+        System.out.println();
+        System.out.println(lib);
+        System.out.println();
+        System.out.println(lib.bookCount("1b"));
+        System.out.println(lib.bookCount("4b"));
+        System.out.println(lib.hasBook("2b"));
+
+
     }
 }
 
