@@ -1,134 +1,109 @@
 package ru.pa4ok;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class Main
 {
     /*
-    если класс наследуется кем либо - все поля protected
-    если класс НЕ наследуется - все поля private
-    ко всем классам геттеры и сеттеры + toString()
-
-    enum GenderEnum
-    - MALE
-    - FEMALE
-
-    Human
-    - String firstname
-    - String surname
-    - String patronymic
-    - GenderEnum gender
-    - int age
-    - public void nexYear() //age++
-
-    Teacher extends Human
-    - String subject
-    - int exp
-    - public void nexYear() //сначала вызывать родительскую реализацию, потом exp++
-
-    Student extends Human
-    - int level
-    - public void nexYear() //сначала вызывать родительскую реализацию, потом level++
-
-    Building
-    - String address
-    - int floorCount
-
-    School extends Building
-    - int index
+    Book
+    - private static int idCounter = 0
+    - final int id = ++idCounter
     - String title
-    - List<Teacher> teachers
-    - List<Student> students
-    - public boolean addEntity(Human human)
-            если класс объекта human принадлежит классу Teacher
-            то нужно добавить его на пустое месте в массиве teachers и вернуть true
-            если класс объекта human принадлежит классу Student
-            то нужно добавить его на пустое месте в массиве students и вернуть true
-            если и не то и не то - вывести в консоль аля not a school entity + human
-            если пустого места нет или у нас "not a school entity" то вернуть false
-    - public int nextYearAll()
-        перебирает всех студентов и преподавателей и вызывает у них nextYear()
-        если после вызова метода у стундента курс > 5, то его нужно заменить на null
-        и вывести информацию о том, что он закончил вуз
-        если после вызова метода у преподавателя возраст > 65, то его нужно заменить на null
-        и вывести информацию о том, что он вышел на пенсию
-        возвращаемым значением функции будет количество ушедших людей из школы
+    - String author
+    - int pages
+
+    Library
+    - String title
+    - String address
+    - List<Book> books //список со всеми книгами
+    - Map<String, Integer> booksCache //ключ - название кники, объект - количество книг
+
+    - public boolean hasBook(String title)
+    - public Book takeBook(String title)
+    - public void addBook(Book book)
+    - public int bookCount(String title)
+
+    у вас есть список со всеми книгами и кеш к ним
+    при вызове hasBook вы проверяете есть ключ в кеше
+    при добавлении в кеше нет такого ключа вы его добавлете
+    при взятии книги если их не осталось - удалить запись из кеша
      */
 
     public static void main(String[] args)
     {
-        /*List<String> list = new ArrayList<>();
+        //коллекция без повторяющихся элементов
+        /*Set<String> set = new HashSet<>();
+        set.add("abc");
+        set.add("abc");
+        set.add("abc");
+        set.add("abc");
+        set.add("abc");
+        set.add("abcggrgre");
+        System.out.println(set);*/
 
-        list.add("ewkfewfwe");
-        list.add("524545dff");
-        list.add("fewfewf445");
+        TestClass t1 = new TestClass();
+        TestClass t2 = new TestClass();
+        TestClass t3 = new TestClass();
+        TestClass t4 = new TestClass();
+        TestClass t5 = new TestClass();
 
-        System.out.println(list);
+        Map<String, TestClass> map = new HashMap<>();
+        map.put(t1.uuid, t1);
+        map.put(t2.uuid, t2);
+        map.put(t3.uuid, t3);
+        map.put(t4.uuid, t4);
+        map.put(t5.uuid, t5);
+        //System.out.println(map);
 
-        System.out.println(list.contains("fewfewf445"));
-        list.remove(0);
-        list.remove("524545dff");
-        System.out.println(list);
+        /*String key = t3.uuid;
+        TestClass find = map.get(key);
+        System.out.println(find);
 
-        list.clear();
-        list.isEmpty();
-        list.size();
+        String key2 = "433444";
+        TestClass find2 = map.get(key2);
+        System.out.println(find2);*/
 
-        for(int i=0; i<list.size(); i++) {
-            String s = list.get(i);
+        //boolean b = map.containsKey("4445htr");
+        //boolean b1 = map.containsValue(t4);
+
+        //map.clear();
+        //map.size();
+        //map.isEmpty();
+
+        //перебор связок ключ-значение
+        for(Map.Entry<String, TestClass> mapEntry : map.entrySet()) {
+            System.out.println(mapEntry.getKey() + " | " + mapEntry.getValue());
         }
 
-        for (String s : list) {
-        }*/
+        System.out.println();
 
-        //java 9+
-        //List<?> list = List.of(...);
+        //получение всех ключей
+        Set<String> keySet = map.keySet();
+        System.out.println(keySet);
 
-        //java 8+
-        //List<String> list2 = Arrays.asList("ghgh", "yjuyj", "rfwe");
-        //при данной реализации вернется лист в который нельзя добавлять/удалять элементы
-        //list2.add("fefeef"); <-- тут вылетает исключение
-        /*List<String> list = new ArrayList<>(Arrays.asList("ghgh", "yjuyj", "rfwe"));
-        list.add("efefe");
-        System.out.println(list);*/
+        System.out.println();
 
-        School school = new School(
-                "ergiugwgeuw",
-                4,
-                3,
-                "efwojefpew"
-        );
-
-        System.out.println(school);
-        school.addEntity(new Teacher("f", "hh", "grfrgg", GenderEnum.FEMALE, 55, "GRhr", 55));
-        System.out.println(school);
-
-        //school.getTeachers().clear();
-        //System.out.println(school);
+        //получение всех объектов
+        List<TestClass> list = new ArrayList<>(map.values());
+        System.out.println(list);
     }
 }
 
-class Test2
+class TestClass
 {
-    private List<String> list = new ArrayList<>();
+    public String uuid = UUID.randomUUID().toString();
+    public int i = new Random().nextInt(1000);
 
-    public Test2(List<String> list) {
-        this.list = list;
+    public TestClass() {
     }
-}
-
-
-class Test
-{
-    int i = new Random().nextInt(1000);
 
     @Override
     public String toString() {
-        return "Test{" +
-                "i=" + i +
+        return "TestClass{" +
+                "uuid='" + uuid + '\'' +
+                ", i=" + i +
                 '}';
     }
 }
+
+
