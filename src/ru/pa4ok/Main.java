@@ -91,9 +91,23 @@ public class Main
         //List<String> list2 = Arrays.asList("ghgh", "yjuyj", "rfwe");
         //при данной реализации вернется лист в который нельзя добавлять/удалять элементы
         //list2.add("fefeef"); <-- тут вылетает исключение
-        List<String> list = new ArrayList<>(Arrays.asList("ghgh", "yjuyj", "rfwe"));
+        /*List<String> list = new ArrayList<>(Arrays.asList("ghgh", "yjuyj", "rfwe"));
         list.add("efefe");
-        System.out.println(list);
+        System.out.println(list);*/
+
+        School school = new School(
+                "ergiugwgeuw",
+                4,
+                3,
+                "efwojefpew"
+        );
+
+        System.out.println(school);
+        school.addEntity(new Teacher("f", "hh", "grfrgg", GenderEnum.FEMALE, 55, "GRhr", 55));
+        System.out.println(school);
+
+        //school.getTeachers().clear();
+        //System.out.println(school);
     }
 }
 
