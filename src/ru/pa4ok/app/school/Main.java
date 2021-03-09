@@ -1,4 +1,4 @@
-package ru.pa4ok.app;
+package ru.pa4ok.app.school;
 
 public class Main
 {
@@ -11,32 +11,42 @@ public class Main
     - FEMALE
     - MALE
 
-    Human
+    abstract Human
     - String firstname;
     - String surname;
     - String patronymic;
     - GenderEnum gender
     - int age;
     - public void nextYear() //age++
+    - public abstract void work()
 
     Teacher extends Human
     - String subject
     - int exp
     - public void nextYear() //вызывает родителькую реализацию, после чего exp++
+    - public void work() //выводить в консоль "учит студентов"
 
     Student extends Human
     - int level
     - public void nextYear() //вызывает родительскую реализацию, после чего level++
+    - public void work() //выводить в консоль "делает лабы"
 
-    Building
+    BuildingTypeEnum
+    - LIVING
+    - SOCIAL
+    - INDUSTRIAL
+
+    abstract Building
     - String address
     - int floorCount
+    - public abstract BuildingTypeEnum getBuildingType()
 
     School extends Building
     - int index
     - String title
     - Teacher[] teachers
     - Student[] students
+    - public BuildingTypeEnum getBuildingType() //вернет тут SOCIAL
     - public boolean addEntity(Human human)
             если класс объекта human принадлежит классу Teacher
             то нужно добавить его на пустое месте в массиве teachers и вернуть true
@@ -55,7 +65,7 @@ public class Main
 
     public static void main(String[] args)
     {
-        Human h = new Human("g", "g", "g", 64);
+        /*Human h = new Human("g", "g", "g", 64);
         Teacher t = new Teacher("a", "b", "c", 65, "greg", 45);
         Student s = new Student("g", "jm", "uk", 20, 5);
 
@@ -64,7 +74,7 @@ public class Main
         school.addEntity(t);
         school.addEntity(s);
         school.addEntity(h);
-        System.out.println(school);
+        System.out.println(school);*/
     }
 
     private static void incrementYear(Human h)
