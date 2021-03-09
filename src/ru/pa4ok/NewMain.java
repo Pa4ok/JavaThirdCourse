@@ -31,85 +31,26 @@ public class NewMain
 
     public static void main(String[] args)
     {
-        //сеты тоже самое что и листы, но не хранят повторяющеся элементы
-        /*List<String> list = new ArrayList<>();
-        Set<String> set = new HashSet<>();
-
-        list.add("1");
-        list.add("1");
-        list.add("1");
-        list.add("3");
-        list.add("5");
-
-        set.add("1");
-        set.add("1");
-        set.add("1");
-        set.add("3");
-        set.add("5");
-
-        System.out.println(list);
-        System.out.println(set);*/
-
-
-
-        /*
-            коллекция, которая хранит связки
-            ключ-значение
-            порядок не оригинальный
-         */
-        Map<String, TestObject> map = new HashMap<>();
-
-        TestObject t1 = new TestObject("t1");
-        TestObject t2 = new TestObject("t2");
-        TestObject t3 = new TestObject("t3");
-        TestObject t4 = new TestObject("t4");
-        TestObject t5 = new TestObject("t5");
-        TestObject t6 = new TestObject("t6");
-
-        map.put(t1.title, t1);
-        map.put(t2.title, t2);
-        map.put(t3.title, t3);
-
-        /*map.remove("t2");
-        map.clear();
-        map.size();
-        map.isEmpty();
-        map.containsKey("t9");
-        TestObject t = map.get("t3");*/
-
-        System.out.println(map);
-
-        //перебор всех связок ключ-значение
-        /*for(Map.Entry<String, TestObject> entry : map.entrySet()) {
-            System.out.println(entry.getKey() + " | " + entry.getValue());
-        }*/
-
-        //перебор всех ключей
-        /*for(String key : map.keySet()) {
-            System.out.print(key + " | ");
+        List<Book> list = new ArrayList<>();
+        for(int i=0; i<4000000; i++) {
+            list.add(new Book("title-" + i, "author-" + i, 100 + i));
         }
-        System.out.println();*/
 
-        //получение всех объектов
-        /*List<TestObject> list = new ArrayList<>(map.values());
-        System.out.println(list);*/
-    }
-}
+        Library newLib = new Library("4", "f");
+        LibraryOld oldLib = new LibraryOld();
 
-class TestObject
-{
-    public String title;
-    public int value = new Random().nextInt(1000);
+        for(Book b : list) {
+            newLib.addBook(b);
+            oldLib.books.add(b);
+        }
 
-    public TestObject(String title) {
-        this.title = title;
-    }
-
-    @Override
-    public String toString() {
-        return "TestObject{" +
-                "title='" + title + '\'' +
-                ", value=" + value +
-                '}';
+        long mills = System.nanoTime();
+        System.out.println(oldLib.hasBook("title-2000000"));
+        System.out.println(System.nanoTime() - mills);
+        System.out.println();
+        mills = System.nanoTime();
+        System.out.println(newLib.hasBook("title-2000000"));
+        System.out.println(System.nanoTime() - mills);
+        System.out.println();
     }
 }
